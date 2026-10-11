@@ -38,16 +38,29 @@ Most people have several AI agents on their computer and use one. Many of those 
 | You can run shell commands (Claude Code, Cursor, Antigravity, Codex, OpenCode…) | Run the probe yourself (Step 1). |
 | Chat only, no shell (ChatGPT web, claude.ai, Gemini web, Claude Cowork) | Give the user the probe command to run (Step 1), ask them to paste back the table, and build the fleet from it. For dispatch: if you can write into a folder they shared, write the job folders and **one runner script**. If you can't write files, print **one setup script** in chat that creates them. Then read the outputs they share. See `references/brief-template.md`. |
 
-## Step 1 — Discover the fleet (mandatory, first)
+## Step 1 — Discover the fleet (fast, mandatory first)
 
-Run the probe. Use `-Smoke` / `--smoke` the first time and whenever a tool fails unexpectedly:
+Run the fast presence-and-version probe first. It does not send prompts to model providers or test account quota:
 
 ```powershell
 # Windows
-powershell -NoProfile -ExecutionPolicy Bypass -File "<skill-folder>/scripts/probe-fleet.ps1" -Smoke
+powershell -NoProfile -ExecutionPolicy Bypass -File "<skill-folder>/scripts/probe-fleet.ps1"
 ```
 ```bash
 # macOS / Linux
+bash "<skill-folder>/scripts/probe-fleet.sh"
+```
+
+A fast probe reports installed tools and versions; `auth` and `credits` remain untested until an opt-in smoke check.
+
+### Optional smoke check — ask first
+
+Smoke mode sends a short fixed prompt to each supported installed CLI. This contacts the providers configured on the user's machine and may use paid or limited quota. Run it only when the user explicitly asks or confirms. It is unnecessary for inspecting project folders; inspect only the requested paths with the current host's file tools, read-only by default, and never upload folder contents to another agent without consent.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File "<skill-folder>/scripts/probe-fleet.ps1" -Smoke
+```
+```bash
 bash "<skill-folder>/scripts/probe-fleet.sh" --smoke
 ```
 
