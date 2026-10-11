@@ -4,6 +4,18 @@ All notable changes to this project are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] — 2026-10-11
+
+### Changed
+
+- **`fleet-orchestrator` v2** — now works from any main AI (Claude Code, Cursor, Antigravity, Codex, or chat-only hosts via a runner script).
+  - New three-state fleet probe (`installed` / `auth` / `credits`) for Windows (`scripts/probe-fleet.ps1`) and macOS/Linux (`scripts/probe-fleet.sh`), covering 16 agent CLIs and detecting broken launchers.
+  - "No lazy *not available*" rule: a tool may only be called missing after its check output is quoted.
+  - Suggests free agents to install from a registry-checked catalog (`references/agent-catalog.md`), never installing without the user's yes.
+  - Architect-style planning: decompose into file-owned jobs, THINK / DO / PRIVATE tiers, builder vendor ≠ reviewer vendor.
+  - New `references/dispatch-recipes.md` (headless commands + OS traps) and `references/brief-template.md` (job brief, review brief, runner script).
+  - Removed machine-specific paths and hard-coded model names; models are now read from the live probe.
+
 ## [1.0.0] — 2026-10-10
 
 Initial public release.
