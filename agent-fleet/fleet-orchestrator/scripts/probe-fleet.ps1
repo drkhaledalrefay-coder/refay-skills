@@ -17,9 +17,11 @@ Output: a table on screen and fleet-status.json (UTF-8, no BOM). Secrets, e-mail
 [CmdletBinding()]
 param(
     [switch]$Smoke,
-    [string]$OutDir = $(if ($PSScriptRoot) { $PSScriptRoot } else { (Get-Location).Path }),
+    [string]$OutDir = '',
     [int]$SmokeTimeoutSec = 90
 )
+# Default: next to this script ($PSScriptRoot is empty inside param defaults on Windows PowerShell 5.1)
+if (-not $OutDir) { $OutDir = if ($MyInvocation.MyCommand.Path) { Split-Path -Parent $MyInvocation.MyCommand.Path } else { (Get-Location).Path } }
 
 # The expected answer (42) is not in the prompt, so a CLI that echoes the prompt can't fake a pass.
 $Prompt = 'What is 17 plus 25? Reply with digits only.'
