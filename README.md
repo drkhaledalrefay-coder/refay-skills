@@ -74,7 +74,7 @@ Include this line wherever you share or adapt these skills:
 
 ## 🗺️ Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for the release history — current release **1.0.0**, 19 skills in 4 categories.
+See [CHANGELOG.md](CHANGELOG.md) for the release history — current release **1.1.0**, 19 skills in 4 categories. Release 1.1.0 updates `fleet-orchestrator` to v2; see [CHANGELOG.md](CHANGELOG.md) for details.
 
 ---
 
