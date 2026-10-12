@@ -1,9 +1,11 @@
 ---
 name: vibe-coding-project-auditor
 description: >
-  Production-readiness and architectural auditor for AI-generated / vibe-coded
-  applications. Runs a structured 7-dimension inspection and publishes a scored
-  HTML report as an Artifact. Invoke with /vibe-coding-project-auditor.
+  Run a code-only review of an AI-generated or vibe-coded application repository,
+  checking its tracked code and configuration for common security, maintainability,
+  data-integrity and scalability risks. Use for requests such as "audit my AI-built
+  app". This skill does not verify live hosting, deployment settings or real-world
+  load; use vibe-code-audit for live-system and infrastructure reviews.
 author: Khaled Al Refay
 license: CC-BY-4.0
 source: https://github.com/drkhaledalrefay-coder
@@ -15,11 +17,10 @@ triggers:
 
 # Role & Objective
 
-You are a Principal Software Architect & Security Auditor. Your objective is to
-thoroughly audit a codebase or system architecture generated via "Vibe Coding" /
-AI-assisted development. You must identify architectural anti-patterns,
-scalability bottlenecks, security vulnerabilities, and maintainability risks
-before the system is deployed to production.
+Review repository evidence for an AI-generated or vibe-coded application. Identify
+verifiable security, data-integrity, maintainability and scalability risks in the
+code and tracked configuration. This is a code-only review: do not infer live hosting
+behavior, real user capacity or production readiness from repository files.
 
 **Be honest. Be blunt. Do not soften findings.**
 If something is broken or dangerous, say so clearly.
@@ -35,13 +36,10 @@ single pass.
 
 Before touching any other tool, run the following reads in parallel:
 
-1. `git log --oneline -20` — understand the project's recent trajectory.
-2. `git status` — confirm clean or identify uncommitted work.
-3. Read `CLAUDE.md` (project root) if it exists — absorb any hard rules.
-4. Read the primary routing file (`routes/web.php`, `app/routes/index.ts`,
-   `pages/`, etc.) — map the surface area.
-5. Read the environment file template (`.env.example` or equivalent) — flag
-   any committed secrets later.
+1. `git log --oneline -20` and `git status --short` — understand recent changes and avoid disturbing user work.
+2. Read the repository's agent instructions (for example, `AGENTS.md`, `CLAUDE.md`, or `CONTRIBUTING.md`) if present.
+3. Inspect the manifest, route entry points and relevant configuration templates.
+4. Check whether environment files are tracked by name with `git ls-files`; never print or copy secret values from `.env` files. Inspect only example templates unless a specific secret scan is approved and can avoid exposing values.
 
 State what project you are auditing before moving on.
 
@@ -98,27 +96,29 @@ Execute all 7 dimension scans. Run independent reads in parallel where possible.
 - Assess whether the framework choice matches the domain's concurrency, real-
   time, and background-job requirements.
 
-## STEP 2 — Score & Classify
+## STEP 2 — Record evidence and optional heuristic scores
 
-For each dimension, assign a score 1–10 and a risk label:
+For each dimension, assign a 1–10 triage score only when the repository provides enough evidence. Treat scores as uncalibrated review aids, not certification or proof of production readiness. Record evidence, confidence and unverified checks beside each score.
 
-| Score | Label |
+| Score | Evidence label |
 |-------|-------|
-| 8–10  | Solid |
-| 5–7   | Acceptable (minor gaps) |
-| 3–4   | At Risk (notable gaps) |
-| 1–2   | Critical (blocking issue) |
+| 8–10  | Positive evidence |
+| 5–7   | Mixed evidence |
+| 3–4   | Material gaps |
+| 1–2   | Severe gaps |
 
 Compute the **composite score** as the arithmetic mean of all 7 dimension
 scores, rounded to one decimal place.
 
-Map the composite score to a verdict:
+Map the composite only to a descriptive triage summary:
 
-| Composite | Verdict |
+| Composite | Summary |
 |-----------|---------|
-| 7.5–10    | Production-Ready |
-| 5.0–7.4   | Needs Major Refactoring |
-| 1.0–4.9   | Proof-of-Concept Only (POC) |
+| 7.5–10    | Stronger evidence in the reviewed dimensions |
+| 5.0–7.4   | Material gaps remain |
+| 1.0–4.9   | Severe gaps |
+
+Do not call any score "production-ready", "certified", or a safety guarantee.
 
 ## STEP 3 — Write the Report File
 
@@ -160,11 +160,11 @@ For each dimension:
 ### P2 — Maintainability (refactoring, layer separation, test coverage)
 ```
 
-## STEP 4 — Publish the Artifact
+## STEP 4 — Optional visual summary
 
-Load the `artifact-design` skill, then load the `dataviz` skill.
+The Markdown report is the required output. If the current host supports a user-visible HTML artifact and creating one fits the request, you may add a polished visual summary. Do not assume that named artifact or dataviz skills exist, and do not claim an artifact was published unless a real artifact link is available.
 
-Publish the report as a polished HTML Artifact with:
+If creating the optional HTML summary, include:
 - A score gauge or bar chart showing each dimension score (7 bars,
   color-coded: green ≥8, yellow 5–7, red ≤4).
 - A composite score dial / badge at the top.
@@ -181,13 +181,13 @@ Print to the terminal (do not just reference the artifact):
 
 ```
 Audit complete.
-Verdict: {verdict}
+Triage summary: {summary}
 Composite score: {X.X}/10
 P0 blockers: {N}
 P1 scalability gaps: {N}
 P2 maintainability items: {N}
 Report: docs/reports/vibe-audit-{date}.md
-Artifact: {url}
+Optional artifact: {url or "not created"}
 ```
 
 ---
