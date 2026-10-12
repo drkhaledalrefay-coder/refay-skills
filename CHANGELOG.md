@@ -9,6 +9,7 @@ All notable changes to this project are documented in this file.
 - Correct the README release pointer to 1.1.0 and document the fleet-orchestrator v2 entry.
 - Make the fleet-orchestrator smoke probe explicitly opt-in because it contacts configured providers and may consume quota.
 - Separate the live-platform audit from the repository-only AI-generated application audit, and describe scores as heuristic triage aids.
+- Narrow fleet-orchestrator triggers to explicit delegation, fleet discovery, and large repetitive jobs.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
