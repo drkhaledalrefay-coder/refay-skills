@@ -38,8 +38,8 @@ Free, open-source AI agent skills for **cinematic AI filmmaking**, **agent fleet
 | :--- | :--- |
 | [cinematic-hero](vibe-coding/cinematic-hero/) | Build a full-viewport scroll-driven cinematic hero with video crossfade or canvas frame-sequence scrubbing. |
 | [vibe-architect](vibe-coding/vibe-architect/) | Architect and structure projects for vibe coders to professional engineering standards with headless-first plans. |
-| [vibe-code-audit](vibe-coding/vibe-code-audit/) | Conduct a rigorous engineering audit for web applications to assess production-readiness and architecture. |
-| [vibe-coding-project-auditor](vibe-coding/vibe-coding-project-auditor/) | Run a structured 7-dimension inspection on AI-generated applications and publish a scored HTML report. |
+| [vibe-code-audit](vibe-coding/vibe-code-audit/) | Review live infrastructure, deployment risk and operations for web platforms using evidence from available systems. |
+| [vibe-coding-project-auditor](vibe-coding/vibe-coding-project-auditor/) | Review an AI-generated app's repository code and tracked configuration; produce a Markdown report with optional visual summary. |
 
 ### [📣 Marketing — campaigns & profile](marketing/README.md)
 
