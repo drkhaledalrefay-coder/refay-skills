@@ -105,9 +105,9 @@ step single-agent when parallelism would add cost or expose unnecessary informat
 
 After all lanes report:
 1. Map each finding to its pillar
-2. Score each pillar 0–100 using the rubric in `references/pillars.md`
-3. Compute weighted composite
-4. Classify maturity tier
+2. Optionally score a pillar 0–100 only when the available evidence supports it.
+3. Compute a weighted composite only when all six pillar scores are evidence-supported.
+4. Use a maturity tier only when a complete composite is available; otherwise report findings without an overall score.
 5. If a permitted independent reviewer is available, ask it to check the highest-risk findings. Verify its claims yourself; do not require a named model or tool.
 
 ### Step 4 — Deliver Report
@@ -124,13 +124,13 @@ State the evidence and its limits plainly; do not certify a system as production
 Date: YYYY-MM-DD | Reviewers/tools used: [only those actually used]
 
 ## Executive Assessment
-Triage score: XX/100 — [descriptive tier]
+Optional triage score: XX/100 — [descriptive tier, or omitted]
 Scope and access: [what was reviewed, what was unavailable]
 Confidence: [high / medium / low, with reason]
 [State what the evidence supports. Do not imply the review proves production safety.]
 
 ## Scorecard Matrix
-| Pillar | Score | Weight | Finding |
+| Pillar | Optional score | Weight | Finding |
 |---|---|---|---|
 | Infrastructure & Perimeter | XX | 15% | ... |
 | API Architecture & Caching | XX | 20% | ... |
@@ -138,7 +138,7 @@ Confidence: [high / medium / low, with reason]
 | Auth & Session | XX | 15% | ... |
 | Codebase & Git | XX | 15% | ... |
 | AI Context & Tech Debt | XX | 15% | ... |
-| **Composite** | **XX** | 100% | |
+| **Optional composite** | **XX or omitted** | 100% | |
 
 ## Deep Technical Breakdown
 [One section per pillar — findings, evidence, severity]
