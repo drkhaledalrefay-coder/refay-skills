@@ -1,5 +1,10 @@
 # Six Pillars — Full Scoring Rubric
 
+These weights and thresholds are an unvalidated heuristic, not a calibrated benchmark.
+Use the checks as prompts for evidence, adapt them to the system's context, and report
+coverage and confidence. Do not claim production readiness from a score. Never perform
+network scans or load tests unless they are in the user's explicit scope.
+
 ## Pillar 1: Infrastructure, Edge Security & Perimeter (15%)
 
 **What to check:**
@@ -123,6 +128,7 @@
 Composite = (P1 × 0.15) + (P2 × 0.20) + (P3 × 0.20) + (P4 × 0.15) + (P5 × 0.15) + (P6 × 0.15)
 ```
 
-Round to nearest integer. If any single pillar scores below 30, flag it as a **Critical Blocker**
-regardless of composite — a catastrophic failure in one pillar can sink the whole system even
-if everything else is solid.
+Round to the nearest integer only when a numeric summary helps. Treat any low pillar as
+a signal to investigate and explain the evidence; do not label a score threshold a
+verified blocker without concrete supporting evidence. A high composite cannot override
+a severe finding or prove production readiness.
