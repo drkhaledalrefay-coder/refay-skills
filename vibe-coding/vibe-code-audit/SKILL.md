@@ -19,6 +19,27 @@ repository evidence with live infrastructure observations when access is availab
 Its score is a triage aid, not a certification or proof that a system is safe for
 production. Separate verified evidence from assumptions and unavailable checks.
 
+## When to use / when not to use
+
+- Use for a named deployed platform when the user wants infrastructure, deployment,
+  security or operational behavior reviewed.
+- Do not use for a repository-only review of an AI-generated app; use
+  `vibe-coding-project-auditor` for that.
+- Do not probe, scan, load-test or change a live system without clear scope and
+  authorization for that action.
+
+## Prerequisites
+
+Ask for the project/repository, live service or URL, and review scope when missing.
+Confirm which environments and checks are in scope. If access or evidence is missing,
+mark the check unverified rather than infer a result.
+
+## Outputs
+
+Provide an evidence-linked report with scope, findings, severity, confidence,
+unverified checks and prioritized remediation. Numeric scores are optional triage
+summaries only.
+
 ## Choose available review methods
 
 Use the current host's file, browser and command tools when available. Delegate only
@@ -92,7 +113,7 @@ After all lanes report:
 ### Step 4 — Deliver Report
 
 Use the structured report format below. Never hide bad findings behind vague language.
-An honest PoC verdict is more valuable than a false Production Grade certificate.
+State the evidence and its limits plainly; do not certify a system as production-safe.
 
 ---
 
