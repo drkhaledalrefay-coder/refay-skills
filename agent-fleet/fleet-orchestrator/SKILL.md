@@ -6,10 +6,11 @@ description: >-
   installed, logged in and funded (never claim "not available" without proof), suggest free
   agents worth installing, then split the task into jobs, route thinking to strong models and bulk
   work to cheap or free ones, brief and dispatch them, and verify every result before reporting.
-  Use when the user says "use my agents", "what AI tools do I have", "find free agents",
-  "use the fleet", "delegate", "save your tokens", "you are the orchestrator", or on any
-  multi-step coding, review, research or writing task. For long multi-agent builds with strict
-  time-boxing see fleet-conductor; for videos see motion-forge.
+  Use when the user asks to delegate, inspect available agent CLIs, find free agents,
+  or run a large/repetitive task where parallel executors materially help. Do not trigger
+  for ordinary multi-step work that the current assistant can handle efficiently alone.
+  For long multi-agent builds with strict time-boxing see fleet-conductor; for videos see
+  motion-forge.
 author: Khaled Al Refay
 license: CC-BY-4.0
 source: https://github.com/drkhaledalrefay-coder
@@ -21,8 +22,8 @@ Most people have several AI agents on their computer and use one. Many of those 
 
 ## When to use / not use
 
-- **Use** for any task with more than a few steps, any bulk or repetitive work, any review that needs a second opinion, or when the user asks what agents they have.
-- **Don't use** for a one-line answer or a tiny edit: delegation overhead is not worth it.
+- **Use** when the user asks for delegation or fleet discovery, or when a large repetitive job has independent pieces that benefit from parallel execution.
+- **Don't use** for routine multi-step work, a one-line answer, or a tiny edit when delegation adds overhead without a clear benefit.
 - **Related skills:** `fleet-conductor` adds strict time-boxing and delegated gates for long builds. `motion-forge` runs a fleet for video production. Use those on top of this one.
 
 ## The orchestrator's three laws
