@@ -176,10 +176,10 @@ For each dimension:
 The Markdown report is the required output. If the current host supports a user-visible HTML artifact and creating one fits the request, you may add a polished visual summary. Do not assume that named artifact or dataviz skills exist, and do not claim an artifact was published unless a real artifact link is available.
 
 If creating the optional HTML summary, include:
-- A score gauge or bar chart showing each dimension score (7 bars,
-  color-coded: green ≥8, yellow 5–7, red ≤4).
-- A composite score dial / badge at the top.
-- Verdict badge (color-coded).
+- If evidence supports scores, show each scored dimension in a bar chart (green ≥8,
+  yellow 5–7, red ≤4); omit unscored dimensions.
+- Show the composite only when all seven dimension scores are evidence-supported.
+- Use a descriptive triage summary badge, never a verdict or readiness certification.
 - Collapsible sections per dimension showing findings + remediation steps.
 - A prioritized action plan table (P0 / P1 / P2) at the bottom.
 
@@ -192,12 +192,12 @@ Summarize the findings in the final response (a terminal is optional and not req
 
 ```
 Audit complete.
-Triage summary: {summary}
-Composite score: {X.X}/10
+Triage summary: {summary or "not scored"}
+Optional composite score: {X.X}/10 or omitted
 P0 blockers: {N}
 P1 scalability gaps: {N}
 P2 maintainability items: {N}
-Report: docs/reports/vibe-audit-{date}.md
+Report: {response or authorized file path}
 Optional artifact: {url or "not created"}
 ```
 
