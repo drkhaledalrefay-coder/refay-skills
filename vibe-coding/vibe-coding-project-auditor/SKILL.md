@@ -11,8 +11,8 @@ license: CC-BY-4.0
 source: https://github.com/drkhaledalrefay-coder
 triggers:
   - vibe-coding-project-auditor
-  - vibe audit
-  - audit my project
+  - review this AI-generated codebase
+  - inspect my AI-built app repository
 ---
 
 # Role & Objective
@@ -147,21 +147,21 @@ The file must contain:
 ```
 # Vibe Code Audit — {Project Name} — {Date}
 
-## Executive Verdict
+## Executive Assessment
 - Assessment: {evidence summary; do not certify production readiness}
 - Scope and confidence: {what was reviewed, known limits, confidence}
 - Optional heuristic score: {X.X/10, or omitted}
 
 ## Findings by Dimension
-| Dimension | Score | Label |
+| Dimension | Optional score | Severity/evidence label |
 |-----------|-------|-------|
-| 1. Infrastructure & Edge Resilience | X | Label |
-| 2. API Design & Network Optimization | X | Label |
-| 3. Caching Strategy | X | Label |
-| 4. Concurrency, DB & Data Integrity | X | Label |
-| 5. Authentication & Session | X | Label |
-| 6. Architecture & Maintainability | X | Label |
-| 7. Tech Stack Suitability | X | Label |
+| 1. Infrastructure & Edge Resilience | X or n/a | Label |
+| 2. API Design & Network Optimization | X or n/a | Label |
+| 3. Caching Strategy | X or n/a | Label |
+| 4. Concurrency, DB & Data Integrity | X or n/a | Label |
+| 5. Authentication & Session | X or n/a | Label |
+| 6. Architecture & Maintainability | X or n/a | Label |
+| 7. Tech Stack Suitability | X or n/a | Label |
 
 ## Critical Vulnerabilities & Blockers
 (P0 items only — list each with file + line reference)
