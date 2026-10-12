@@ -6,10 +6,11 @@ description: >-
   installed, logged in and funded (never claim "not available" without proof), suggest free
   agents worth installing, then split the task into jobs, route thinking to strong models and bulk
   work to cheap or free ones, brief and dispatch them, and verify every result before reporting.
-  Use when the user says "use my agents", "what AI tools do I have", "find free agents",
-  "use the fleet", "delegate", "save your tokens", "you are the orchestrator", or on any
-  multi-step coding, review, research or writing task. For long multi-agent builds with strict
-  time-boxing see fleet-conductor; for videos see motion-forge.
+  Use when the user asks to delegate, inspect available agent CLIs, find free agents,
+  or run a large/repetitive task where parallel executors materially help. Do not trigger
+  for ordinary multi-step work that the current assistant can handle efficiently alone.
+  For long multi-agent builds with strict time-boxing see fleet-conductor; for videos see
+  motion-forge.
 author: Khaled Al Refay
 license: CC-BY-4.0
 source: https://github.com/drkhaledalrefay-coder
@@ -21,8 +22,8 @@ Most people have several AI agents on their computer and use one. Many of those 
 
 ## When to use / not use
 
-- **Use** for any task with more than a few steps, any bulk or repetitive work, any review that needs a second opinion, or when the user asks what agents they have.
-- **Don't use** for a one-line answer or a tiny edit: delegation overhead is not worth it.
+- **Use** when the user asks for delegation or fleet discovery, or when a large repetitive job has independent pieces that benefit from parallel execution.
+- **Don't use** for routine multi-step work, a one-line answer, or a tiny edit when delegation adds overhead without a clear benefit.
 - **Related skills:** `fleet-conductor` adds strict time-boxing and delegated gates for long builds. `motion-forge` runs a fleet for video production. Use those on top of this one.
 
 ## The orchestrator's three laws
@@ -38,16 +39,29 @@ Most people have several AI agents on their computer and use one. Many of those 
 | You can run shell commands (Claude Code, Cursor, Antigravity, Codex, OpenCode…) | Run the probe yourself (Step 1). |
 | Chat only, no shell (ChatGPT web, claude.ai, Gemini web, Claude Cowork) | Give the user the probe command to run (Step 1), ask them to paste back the table, and build the fleet from it. For dispatch: if you can write into a folder they shared, write the job folders and **one runner script**. If you can't write files, print **one setup script** in chat that creates them. Then read the outputs they share. See `references/brief-template.md`. |
 
-## Step 1 — Discover the fleet (mandatory, first)
+## Step 1 — Discover the fleet (fast, mandatory first)
 
-Run the probe. Use `-Smoke` / `--smoke` the first time and whenever a tool fails unexpectedly:
+Run the fast presence-and-version probe first. It does not send prompts to model providers or test account quota:
 
 ```powershell
 # Windows
-powershell -NoProfile -ExecutionPolicy Bypass -File "<skill-folder>/scripts/probe-fleet.ps1" -Smoke
+powershell -NoProfile -ExecutionPolicy Bypass -File "<skill-folder>/scripts/probe-fleet.ps1"
 ```
 ```bash
 # macOS / Linux
+bash "<skill-folder>/scripts/probe-fleet.sh"
+```
+
+A fast probe reports installed tools and versions; `auth` and `credits` remain untested until an opt-in smoke check.
+
+### Optional smoke check — ask first
+
+Smoke mode sends a short fixed prompt to each supported installed CLI. This contacts the providers configured on the user's machine and may use paid or limited quota. Run it only when the user explicitly asks or confirms. It is unnecessary for inspecting project folders; inspect only the requested paths with the current host's file tools, read-only by default, and never upload folder contents to another agent without consent.
+
+```powershell
+powershell -NoProfile -ExecutionPolicy Bypass -File "<skill-folder>/scripts/probe-fleet.ps1" -Smoke
+```
+```bash
 bash "<skill-folder>/scripts/probe-fleet.sh" --smoke
 ```
 

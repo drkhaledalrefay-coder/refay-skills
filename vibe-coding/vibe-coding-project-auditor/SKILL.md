@@ -1,25 +1,47 @@
 ---
 name: vibe-coding-project-auditor
 description: >
-  Production-readiness and architectural auditor for AI-generated / vibe-coded
-  applications. Runs a structured 7-dimension inspection and publishes a scored
-  HTML report as an Artifact. Invoke with /vibe-coding-project-auditor.
+  Run a code-only review of an AI-generated or vibe-coded application repository,
+  checking its tracked code and configuration for common security, maintainability,
+  data-integrity and scalability risks. Use for requests such as "audit my AI-built
+  app". This skill does not verify live hosting, deployment settings or real-world
+  load; use vibe-code-audit for live-system and infrastructure reviews.
 author: Khaled Al Refay
 license: CC-BY-4.0
 source: https://github.com/drkhaledalrefay-coder
 triggers:
   - vibe-coding-project-auditor
-  - vibe audit
-  - audit my project
+  - review this AI-generated codebase
+  - inspect my AI-built app repository
 ---
 
 # Role & Objective
 
-You are a Principal Software Architect & Security Auditor. Your objective is to
-thoroughly audit a codebase or system architecture generated via "Vibe Coding" /
-AI-assisted development. You must identify architectural anti-patterns,
-scalability bottlenecks, security vulnerabilities, and maintainability risks
-before the system is deployed to production.
+Review repository evidence for an AI-generated or vibe-coded application. Identify
+verifiable security, data-integrity, maintainability and scalability risks in the
+code and tracked configuration. This is a code-only review: do not infer live hosting
+behavior, real user capacity or production readiness from repository files.
+
+## When to use / when not to use
+
+- Use for a source review of one named AI-generated application repository.
+- Do not use to verify a live deployment, infrastructure, production settings or
+  actual capacity; use `vibe-code-audit` when those live-system questions are in scope.
+- Do not run a scanner, exploit check, load test or other active check unless the
+  user explicitly includes it in scope.
+
+## Prerequisites
+
+Identify the repository/workspace and inspect its project instructions first. Use only
+the current host's available file and search tools. Read-only is the default. If the
+user's project path is missing or inaccessible, ask for the exact folder or a shared
+workspace rather than scanning unrelated folders.
+
+## Outputs
+
+Return a Markdown report with evidence-linked findings, severity, confidence, unknowns
+and prioritized remediations. A numeric score is optional and must be labeled as an
+uncalibrated triage aid.
 
 **Be honest. Be blunt. Do not soften findings.**
 If something is broken or dangerous, say so clearly.
@@ -35,117 +57,106 @@ single pass.
 
 Before touching any other tool, run the following reads in parallel:
 
-1. `git log --oneline -20` — understand the project's recent trajectory.
-2. `git status` — confirm clean or identify uncommitted work.
-3. Read `CLAUDE.md` (project root) if it exists — absorb any hard rules.
-4. Read the primary routing file (`routes/web.php`, `app/routes/index.ts`,
-   `pages/`, etc.) — map the surface area.
-5. Read the environment file template (`.env.example` or equivalent) — flag
-   any committed secrets later.
+1. Check repository status and recent history using available host tools; preserve existing user changes.
+2. Read the repository's agent instructions (for example, `AGENTS.md`, `CLAUDE.md`, or `CONTRIBUTING.md`) if present.
+3. Inspect the relevant manifest, entry points, and configuration templates for the chosen stack.
+4. Check tracked environment-file names without reading their values. Never print or copy values from `.env`; inspect example templates only. Use a secret scanner only when it can suppress secret values and the user has authorized that scan.
 
 State what project you are auditing before moving on.
 
 ## STEP 1 — Dimension Scan (structured reads)
 
-Execute all 7 dimension scans. Run independent reads in parallel where possible.
+Use only dimensions that apply to the repository's actual stack. The examples below are illustrative; translate them to the project's conventions and mark unavailable runtime evidence as unknown. Run independent reads in parallel where possible.
 
 ### Dimension 1 — Infrastructure & Edge Resilience
-- Find rate-limiting middleware/config. Search for: `throttle`, `RateLimit`,
-  `429`, `middleware('throttle:`.
-- Check for exposed secrets: `grep -r "API_KEY\|SECRET\|PASSWORD" .env*` (flag
-  any committed `.env` files in git history via `git log --all -- .env`).
-- Identify whether the app sits behind a CDN/WAF. Look for `cloudflare`,
+- Find application-level rate limiting using the framework's conventions (for example, throttle middleware or request-limit configuration).
+- Check tracked file names for accidental environment files; never print secret values. Inspect only safe example templates by default.
+- From repository configuration, note whether a CDN/WAF is configured; static repository evidence cannot prove its live state. Look for `cloudflare`,
   `CLOUDFLARE_` env vars, `nginx` config files.
 
 ### Dimension 2 — API Design & Network Optimization
-- Find N+1 query risks: search for `foreach` / `for` loops that contain
-  `->find(`, `->where(`, `DB::table(`, `query(` without eager loading.
-- Check `with()` / `load()` / `select_related()` usage on list queries.
-- Identify any route that fetches reference data (countries, roles, categories)
-  without caching.
+- Look for repeated per-item database or API calls inside loops; check the relevant ORM/client for batch loading or eager-loading support.
+- Inspect list/detail paths for avoidable round trips and unbounded result sets.
+- Treat framework-specific examples as examples only; adapt searches to the project's stack.
 
 ### Dimension 3 — Caching Strategy
-- Look for `Cache::`, `Redis::`, `remember(`, `@cache`, or framework-specific
-  caching calls.
-- Check TTLs on cached items — flag any `Cache::forever()` on mutable data.
-- Verify cache invalidation in mutation controllers/services.
+- Find caching APIs and configuration used by the project.
+- Check expiration policies for mutable data and trace invalidation on writes.
+- Distinguish configured cache from runtime behavior, which source review cannot prove.
 
 ### Dimension 4 — Concurrency, Database & Data Integrity
-- Search for `DB::transaction(` or equivalent — flag writes that are NOT
-  wrapped in transactions.
-- Find all list/index queries — confirm `->paginate(` or `LIMIT` is present.
-- Identify missing database indexes: cross-reference foreign keys in migrations
-  against `->index()` / `->foreign()` calls.
+- Inspect multi-step writes for the language/framework's transaction or atomicity mechanisms.
+- Check that collection endpoints constrain or paginate result sizes using the project's conventions.
+- Compare frequently queried foreign keys and filters with the schema/index definitions; report evidence, not assumed index requirements.
 
 ### Dimension 5 — Authentication & Session Lifecycle
 - Read the auth config and session driver settings.
-- Check cookie flags: `SECURE_COOKIE`, `SESSION_SECURE_COOKIE`, `httpOnly`,
-  `SameSite`.
+- Inspect the framework's cookie/session settings for Secure, HttpOnly and SameSite protections where applicable.
 - Find token storage patterns (localStorage vs. HttpOnly cookies for JWTs).
 - Verify logout invalidates the session/token server-side (not just client-side
   delete).
 
 ### Dimension 6 — Architecture & Code Maintainability
-- Assess layer separation: is business logic inside controllers, or in
-  dedicated service/use-case classes?
+- Assess how the chosen stack separates presentation, business rules and persistence; do not require a particular architecture pattern.
 - Search for TODO / FIXME / HACK / workaround comments — each is a debt item.
 - Check for duplicate logic: similar functions across multiple controllers
   without a shared service.
 
 ### Dimension 7 — Tech Stack Suitability
-- Review `composer.json` / `package.json` / `requirements.txt` (whichever
-  applies) for version pins and known vulnerable packages.
-- Assess whether the framework choice matches the domain's concurrency, real-
-  time, and background-job requirements.
+- Review the relevant dependency manifests and lockfiles for versions. Do not claim a dependency is currently vulnerable without checking a current advisory source; otherwise mark that check unverified.
+- Assess whether the chosen stack fits the documented requirements; mark runtime behavior that was not measured as unknown.
 
-## STEP 2 — Score & Classify
+## STEP 2 — Record evidence and optional heuristic scores
 
-For each dimension, assign a score 1–10 and a risk label:
+For each dimension, record evidence and a severity label. You may add a 1–10 score when it helps prioritize, but label it an uncalibrated heuristic and include evidence, confidence and unknowns. Do not compute or report a score when the source does not provide enough evidence.
 
-| Score | Label |
+| Score | Evidence label |
 |-------|-------|
-| 8–10  | Solid |
-| 5–7   | Acceptable (minor gaps) |
-| 3–4   | At Risk (notable gaps) |
-| 1–2   | Critical (blocking issue) |
+| 8–10  | Positive evidence |
+| 5–7   | Mixed evidence |
+| 3–4   | Material gaps |
+| 1–2   | Severe gaps |
 
-Compute the **composite score** as the arithmetic mean of all 7 dimension
-scores, rounded to one decimal place.
+If all seven scores are evidence-supported and a composite is useful, compute their
+arithmetic mean to one decimal place. Otherwise omit the composite.
 
-Map the composite score to a verdict:
+Map the composite only to a descriptive triage summary:
 
-| Composite | Verdict |
+| Composite | Summary |
 |-----------|---------|
-| 7.5–10    | Production-Ready |
-| 5.0–7.4   | Needs Major Refactoring |
-| 1.0–4.9   | Proof-of-Concept Only (POC) |
+| 7.5–10    | Stronger evidence in the reviewed dimensions |
+| 5.0–7.4   | Material gaps remain |
+| 1.0–4.9   | Severe gaps |
 
-## STEP 3 — Write the Report File
+Do not call any score "production-ready", "certified", or a safety guarantee.
 
-Write the full report to:
-`docs/reports/vibe-audit-{YYYY-MM-DD}.md`
+## STEP 3 — Prepare the Report
 
-If `docs/reports/` does not exist, create it. Use today's date in the filename.
+Return the report in the response by default. Write
+`docs/reports/vibe-audit-{YYYY-MM-DD}.md` only when the user asks for a file or
+the project's instructions authorize it. If the folder is absent, do not create it
+without that authorization.
 
 The file must contain:
 
 ```
 # Vibe Code Audit — {Project Name} — {Date}
 
-## Executive Verdict
-- Status: {Production-Ready | Needs Major Refactoring | POC}
-- Composite Score: {X.X}/10
+## Executive Assessment
+- Assessment: {evidence summary; do not certify production readiness}
+- Scope and confidence: {what was reviewed, known limits, confidence}
+- Optional heuristic score: {X.X/10, or omitted}
 
-## Composite Score Breakdown
-| Dimension | Score | Label |
+## Findings by Dimension
+| Dimension | Optional score | Severity/evidence label |
 |-----------|-------|-------|
-| 1. Infrastructure & Edge Resilience | X | Label |
-| 2. API Design & Network Optimization | X | Label |
-| 3. Caching Strategy | X | Label |
-| 4. Concurrency, DB & Data Integrity | X | Label |
-| 5. Authentication & Session | X | Label |
-| 6. Architecture & Maintainability | X | Label |
-| 7. Tech Stack Suitability | X | Label |
+| 1. Infrastructure & Edge Resilience | X or n/a | Label |
+| 2. API Design & Network Optimization | X or n/a | Label |
+| 3. Caching Strategy | X or n/a | Label |
+| 4. Concurrency, DB & Data Integrity | X or n/a | Label |
+| 5. Authentication & Session | X or n/a | Label |
+| 6. Architecture & Maintainability | X or n/a | Label |
+| 7. Tech Stack Suitability | X or n/a | Label |
 
 ## Critical Vulnerabilities & Blockers
 (P0 items only — list each with file + line reference)
@@ -160,15 +171,15 @@ For each dimension:
 ### P2 — Maintainability (refactoring, layer separation, test coverage)
 ```
 
-## STEP 4 — Publish the Artifact
+## STEP 4 — Optional visual summary
 
-Load the `artifact-design` skill, then load the `dataviz` skill.
+The Markdown report is the required output. If the current host supports a user-visible HTML artifact and creating one fits the request, you may add a polished visual summary. Do not assume that named artifact or dataviz skills exist, and do not claim an artifact was published unless a real artifact link is available.
 
-Publish the report as a polished HTML Artifact with:
-- A score gauge or bar chart showing each dimension score (7 bars,
-  color-coded: green ≥8, yellow 5–7, red ≤4).
-- A composite score dial / badge at the top.
-- Verdict badge (color-coded).
+If creating the optional HTML summary, include:
+- If evidence supports scores, show each scored dimension in a bar chart (green ≥8,
+  yellow 5–7, red ≤4); omit unscored dimensions.
+- Show the composite only when all seven dimension scores are evidence-supported.
+- Use a descriptive triage summary badge, never a verdict or readiness certification.
 - Collapsible sections per dimension showing findings + remediation steps.
 - A prioritized action plan table (P0 / P1 / P2) at the bottom.
 
@@ -177,17 +188,17 @@ or equivalent); otherwise use a clean dark-professional palette.
 
 ## STEP 5 — Terminal Summary
 
-Print to the terminal (do not just reference the artifact):
+Summarize the findings in the final response (a terminal is optional and not required):
 
 ```
 Audit complete.
-Verdict: {verdict}
-Composite score: {X.X}/10
+Triage summary: {summary or "not scored"}
+Optional composite score: {X.X}/10 or omitted
 P0 blockers: {N}
 P1 scalability gaps: {N}
 P2 maintainability items: {N}
-Report: docs/reports/vibe-audit-{date}.md
-Artifact: {url}
+Report: {response or authorized file path}
+Optional artifact: {url or "not created"}
 ```
 
 ---
@@ -220,14 +231,11 @@ Artifact: {url}
   input sanitization, and atomic database transactions (ACID)?
 - **Pagination & Query Limits**: Do all listing endpoints enforce pagination?
   Flag hardcoded flat queries.
-- **Concurrency Modeling**: How does the system handle 10, 50, and 500
-  concurrent active users?
+- **Concurrency Modeling**: Static repository review cannot establish real concurrency capacity. Report configured limits and tests found; mark unmeasured active-user capacity unknown.
 
 ### 5. Authentication & Session Lifecycle
-- **Token Storage**: Are tokens stored in `HttpOnly`, `Secure`, and `SameSite`
-  cookies?
-- **Silent Refresh Flow**: Is the token refresh mechanism correct and server-
-  side invalidation guaranteed on logout?
+- **Token Storage**: Review the chosen authentication mechanism and its applicable browser/storage protections; do not assume every app uses browser tokens.
+- **Session lifecycle**: If token refresh is used, inspect its implementation and invalidation flow; otherwise mark not applicable.
 
 ### 6. Architecture & Code Maintainability
 - **Separation of Concerns**: Is there clear separation between:
@@ -240,7 +248,7 @@ Artifact: {url}
 ### 7. Tech Stack Suitability
 - Is the selected stack structurally suited for the domain's transaction
   complexity, state requirements, and background processing needs?
-- Are dependencies up-to-date and free of known CVEs?
+- Are dependency versions supported? Current vulnerability status requires checking an up-to-date advisory source; otherwise mark it unverified.
 
 ---
 
@@ -254,7 +262,7 @@ Artifact: {url}
   in CourseController::index()".
 - Do not flag issues you cannot verify from the code. Mark uncertain items
   with `[UNVERIFIED — manual check required]`.
-- Publish the Artifact even if the score is low. The report is always useful.
+- Do not publish or write a report without user authorization. Never omit a severe finding because of a low score.
 
 ---
 *Created by **Khaled Al Refay** · Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) — free to use and adapt with attribution.*

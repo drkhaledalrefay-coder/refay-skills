@@ -29,7 +29,7 @@ Free, open-source AI agent skills for **cinematic AI filmmaking**, **agent fleet
 | Skill | What it does |
 | :--- | :--- |
 | [fleet-conductor](agent-fleet/fleet-conductor/) | Conduct a multi-agent fleet as a planner and judge, delegating multi-step execution tasks. |
-| [fleet-orchestrator](agent-fleet/fleet-orchestrator/) | Make any main AI find, recruit and conduct every AI agent on your computer — free ones first — and verify their work. |
+| [fleet-orchestrator](agent-fleet/fleet-orchestrator/) | Discover local agent tools and delegate suitable bounded tasks to available agents; smoke checks are opt-in. |
 | [motion-forge](agent-fleet/motion-forge/) | Produce a professional explainer or cinematic video by orchestrating an installed agent fleet. |
 
 ### [🛠️ Vibe coding — build & audit](vibe-coding/README.md)
@@ -38,8 +38,8 @@ Free, open-source AI agent skills for **cinematic AI filmmaking**, **agent fleet
 | :--- | :--- |
 | [cinematic-hero](vibe-coding/cinematic-hero/) | Build a full-viewport scroll-driven cinematic hero with video crossfade or canvas frame-sequence scrubbing. |
 | [vibe-architect](vibe-coding/vibe-architect/) | Architect and structure projects for vibe coders to professional engineering standards with headless-first plans. |
-| [vibe-code-audit](vibe-coding/vibe-code-audit/) | Conduct a rigorous engineering audit for web applications to assess production-readiness and architecture. |
-| [vibe-coding-project-auditor](vibe-coding/vibe-coding-project-auditor/) | Run a structured 7-dimension inspection on AI-generated applications and publish a scored HTML report. |
+| [vibe-code-audit](vibe-coding/vibe-code-audit/) | Review live infrastructure, deployment risk and operations for web platforms using evidence from available systems. |
+| [vibe-coding-project-auditor](vibe-coding/vibe-coding-project-auditor/) | Review an AI-generated app's repository code and tracked configuration; produce a Markdown report with optional visual summary. |
 
 ### [📣 Marketing — campaigns & profile](marketing/README.md)
 
@@ -74,7 +74,7 @@ Include this line wherever you share or adapt these skills:
 
 ## 🗺️ Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for the release history — current release **1.0.0**, 19 skills in 4 categories.
+See [CHANGELOG.md](CHANGELOG.md) for the release history — current release **1.1.0**, 19 skills in 4 categories. Release 1.1.0 updates `fleet-orchestrator` to v2; see [CHANGELOG.md](CHANGELOG.md) for details.
 
 ---
 
