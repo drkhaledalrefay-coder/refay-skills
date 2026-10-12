@@ -29,7 +29,7 @@ Free, open-source AI agent skills for **cinematic AI filmmaking**, **agent fleet
 | Skill | What it does |
 | :--- | :--- |
 | [fleet-conductor](agent-fleet/fleet-conductor/) | Conduct a multi-agent fleet as a planner and judge, delegating multi-step execution tasks. |
-| [fleet-orchestrator](agent-fleet/fleet-orchestrator/) | Make any main AI find, recruit and conduct every AI agent on your computer — free ones first — and verify their work. |
+| [fleet-orchestrator](agent-fleet/fleet-orchestrator/) | Discover local agent tools and delegate suitable bounded tasks to available agents; smoke checks are opt-in. |
 | [motion-forge](agent-fleet/motion-forge/) | Produce a professional explainer or cinematic video by orchestrating an installed agent fleet. |
 
 ### [🛠️ Vibe coding — build & audit](vibe-coding/README.md)
