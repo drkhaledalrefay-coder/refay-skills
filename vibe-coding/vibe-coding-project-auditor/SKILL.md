@@ -66,7 +66,7 @@ State what project you are auditing before moving on.
 
 ## STEP 1 — Dimension Scan (structured reads)
 
-Execute all 7 dimension scans. Run independent reads in parallel where possible.
+Use only dimensions that apply to the repository's actual stack. The examples below are illustrative; translate them to the project's conventions and mark unavailable runtime evidence as unknown. Run independent reads in parallel where possible.
 
 ### Dimension 1 — Infrastructure & Edge Resilience
 - Find application-level rate limiting using the framework's conventions (for example, throttle middleware or request-limit configuration).
@@ -80,10 +80,9 @@ Execute all 7 dimension scans. Run independent reads in parallel where possible.
 - Treat framework-specific examples as examples only; adapt searches to the project's stack.
 
 ### Dimension 3 — Caching Strategy
-- Look for `Cache::`, `Redis::`, `remember(`, `@cache`, or framework-specific
-  caching calls.
-- Check TTLs on cached items — flag any `Cache::forever()` on mutable data.
-- Verify cache invalidation in mutation controllers/services.
+- Find caching APIs and configuration used by the project.
+- Check expiration policies for mutable data and trace invalidation on writes.
+- Distinguish configured cache from runtime behavior, which source review cannot prove.
 
 ### Dimension 4 — Concurrency, Database & Data Integrity
 - Inspect multi-step writes for the language/framework's transaction or atomicity mechanisms.
@@ -92,24 +91,20 @@ Execute all 7 dimension scans. Run independent reads in parallel where possible.
 
 ### Dimension 5 — Authentication & Session Lifecycle
 - Read the auth config and session driver settings.
-- Check cookie flags: `SECURE_COOKIE`, `SESSION_SECURE_COOKIE`, `httpOnly`,
-  `SameSite`.
+- Inspect the framework's cookie/session settings for Secure, HttpOnly and SameSite protections where applicable.
 - Find token storage patterns (localStorage vs. HttpOnly cookies for JWTs).
 - Verify logout invalidates the session/token server-side (not just client-side
   delete).
 
 ### Dimension 6 — Architecture & Code Maintainability
-- Assess layer separation: is business logic inside controllers, or in
-  dedicated service/use-case classes?
+- Assess how the chosen stack separates presentation, business rules and persistence; do not require a particular architecture pattern.
 - Search for TODO / FIXME / HACK / workaround comments — each is a debt item.
 - Check for duplicate logic: similar functions across multiple controllers
   without a shared service.
 
 ### Dimension 7 — Tech Stack Suitability
-- Review `composer.json` / `package.json` / `requirements.txt` (whichever
-  applies) for version pins and known vulnerable packages.
-- Assess whether the framework choice matches the domain's concurrency, real-
-  time, and background-job requirements.
+- Review the relevant dependency manifests and lockfiles for versions. Do not claim a dependency is currently vulnerable without checking a current advisory source; otherwise mark that check unverified.
+- Assess whether the chosen stack fits the documented requirements; mark runtime behavior that was not measured as unknown.
 
 ## STEP 2 — Record evidence and optional heuristic scores
 
@@ -135,7 +130,7 @@ Map the composite only to a descriptive triage summary:
 
 Do not call any score "production-ready", "certified", or a safety guarantee.
 
-## STEP 3 — Write the Report File
+## STEP 3 — Prepare the Report
 
 Return the report in the response by default. Write
 `docs/reports/vibe-audit-{YYYY-MM-DD}.md` only when the user asks for a file or
@@ -236,14 +231,11 @@ Optional artifact: {url or "not created"}
   input sanitization, and atomic database transactions (ACID)?
 - **Pagination & Query Limits**: Do all listing endpoints enforce pagination?
   Flag hardcoded flat queries.
-- **Concurrency Modeling**: How does the system handle 10, 50, and 500
-  concurrent active users?
+- **Concurrency Modeling**: Static repository review cannot establish real concurrency capacity. Report configured limits and tests found; mark unmeasured active-user capacity unknown.
 
 ### 5. Authentication & Session Lifecycle
-- **Token Storage**: Are tokens stored in `HttpOnly`, `Secure`, and `SameSite`
-  cookies?
-- **Silent Refresh Flow**: Is the token refresh mechanism correct and server-
-  side invalidation guaranteed on logout?
+- **Token Storage**: Review the chosen authentication mechanism and its applicable browser/storage protections; do not assume every app uses browser tokens.
+- **Session lifecycle**: If token refresh is used, inspect its implementation and invalidation flow; otherwise mark not applicable.
 
 ### 6. Architecture & Code Maintainability
 - **Separation of Concerns**: Is there clear separation between:
@@ -256,7 +248,7 @@ Optional artifact: {url or "not created"}
 ### 7. Tech Stack Suitability
 - Is the selected stack structurally suited for the domain's transaction
   complexity, state requirements, and background processing needs?
-- Are dependencies up-to-date and free of known CVEs?
+- Are dependency versions supported? Current vulnerability status requires checking an up-to-date advisory source; otherwise mark it unverified.
 
 ---
 
