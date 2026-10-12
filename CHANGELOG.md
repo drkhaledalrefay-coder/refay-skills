@@ -4,6 +4,12 @@ All notable changes to this project are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] — 2026-10-12
+
+### Added
+
+- **`living-readme`** (vibe-coding) — creates a README from repository evidence (git history, manifests, CI, tests, docs) and later updates it only when real changes happen. Two standard-library Python scripts: `collect_facts.py` (facts JSON) and `detect_changes.py` (README-relevant changes vs noise since a `last-sync` marker). Tested on six real repositories.
+
 ## [1.1.0] — 2026-10-11
 
 ### Changed
