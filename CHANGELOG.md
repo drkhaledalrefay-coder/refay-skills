@@ -4,6 +4,13 @@ All notable changes to this project are documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+### Added
+
+- **`gemini-getsu`** (cinematic) — writes Google Flow character-swap prompts from one source clip and character reference images, with dialogue and continuity checks.
+- Added the café-scene artwork and clearer Arabic and English install instructions to its README.
+
 ## [1.2.0] — 2026-10-12
 
 ### Added
