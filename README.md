@@ -1,4 +1,4 @@
-<!-- living-readme: last-sync e1b37b7 2026-10-12 -->
+<!-- living-readme: last-sync a620868 2026-10-25 -->
 
 # 🧰 Refay Skills
 
@@ -125,13 +125,13 @@ Every skill in this repo follows one format: a kebab-case folder whose entry poi
 
 ## 🧪 Testing and maintenance
 
-**As of 2026-10-12:** This repository has no automated test suite and no CI pipeline. Quality is maintained through:
+**As of 2026-10-25:** This repository has no automated test suite and no CI pipeline. Quality is maintained through:
 
 - The **skill standard** ([docs/SKILL-STANDARD.md](docs/SKILL-STANDARD.md)) — every skill must pass a format and quality checklist before inclusion.
 - **Author review** — all skills are written and reviewed by the author.
 - **Versioned releases** — changes are tracked in [CHANGELOG.md](CHANGELOG.md) with semantic versioning.
 
-The repository contains 60 tracked files across 48 Markdown files, 3 shell scripts, 2 PowerShell scripts, and 1 Python script.
+The repository contains 73 tracked files: 58 Markdown files, 3 Python scripts, 3 shell scripts, 2 PowerShell scripts, and 7 other files. Counts come from `git ls-files` and the `living-readme` facts report.
 
 ---
 
@@ -143,7 +143,7 @@ The repository contains 60 tracked files across 48 Markdown files, 3 shell scrip
 
 ## 👤 About the author
 
-**Khaled Al Refay** — a pharmacist who builds with AI. Creator and maintainer of all 20 skills in this collection.
+**Khaled Al Refay** — a pharmacist who builds with AI. Creator and maintainer of all 21 skills in this collection.
 
 GitHub: [drkhaledalrefay-coder](https://github.com/drkhaledalrefay-coder)
 
@@ -163,7 +163,7 @@ Include this line wherever you share or adapt these skills:
 
 ## 🗺️ Changelog
 
-See [CHANGELOG.md](CHANGELOG.md) for the release history — current release **1.2.0** (2026-10-12), 20 skills in 4 categories.
+The collection has **21 skills across 4 categories** as of 2026-10-25. The latest release is **1.2.0** (2026-10-12); newer work is listed under Unreleased in [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
