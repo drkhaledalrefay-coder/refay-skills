@@ -1,14 +1,12 @@
 ---
 name: gemini-getsu
-description: Use when someone wants copy-ready Google Flow prompts for a video idea built from reference assets: an Alter-style character swap or recast of one source clip, character reference images, exact spoken dialogue, natural phone-footage direction, or a plan that avoids duplicate generations and wasted credits. Triggers: "Alter swap", "recast this clip", "Google Flow prompt", "Veo prompt", "same clip, different character", "exact dialogue", "raw phone footage".
+description: Use when someone wants copy-ready Google Flow prompts for a video idea built from reference assets: a character swap or recast of one source clip, character reference images, exact spoken dialogue, natural phone-footage direction, or a plan that avoids duplicate generations and wasted credits. Triggers: "swap the character", "recast this clip", "Google Flow prompt", "Veo prompt", "same clip, different character", "exact dialogue", "raw phone footage".
 argument-hint: '[idea, source video, character images, exact dialogue, visual style]'
 ---
 
 # gemini-getsu: Google Flow prompt pack
 
 Turn an idea plus the user's own assets into a low-waste plan and copy-ready prompts for Google Flow. The skill writes prompts. It never claims a video was generated unless a generation actually finished, and it never starts a paid generation on its own.
-
-Inspired by the ALTER skill from Scenario (scenario-alter, MIT). "ALTER by Scenario" is credited wherever this skill is published. Not affiliated with Google or Scenario.
 
 ## 1. Collect (ask at most ONE short question, only if it changes the result)
 
@@ -86,5 +84,3 @@ Report failures. Do not regenerate unless the user approves the credits.
 - If the user names another model (for example Higgsfield), write those prompts separately and label them.
 - Do not claim a tool is connected or credits were spent when they were not.
 
----
-*Created by **Khaled Al Refay** · Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) · Inspired by ALTER by Scenario (scenario-alter, MIT)*

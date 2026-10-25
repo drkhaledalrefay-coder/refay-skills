@@ -1,10 +1,11 @@
 # 🎬 Cinematic — AI filmmaking skills
 
-Seven skills for planning, prompting and producing AI-generated film: painterly and Arcane-style animation, action choreography, character and world design, style locking, and keeping a Higgsfield project organised. They cover the whole pipeline from a first story idea and reference images through locked identities, timecoded shot prompts, generation and review.
+Eight skills for planning, prompting and producing AI-generated film: Google Flow character swaps, painterly animation, action choreography, character and world design, style locking, and keeping a Higgsfield project organised.
 
 | Skill | Use it when | Key outputs |
 | :--- | :--- | :--- |
 | [higgsfield-folder-organizer](higgsfield-folder-organizer/) | Reorganizing images/videos/character sheets inside a Higgsfield.ai project via browser UI: drag-and-drop, multi-select, bulk download. | Folder structure proposal, drag-and-drop moves, multi-select bulk-download zips, per-folder item counts, final structure report |
+| [gemini-getsu](gemini-getsu/) | Writing Google Flow prompts to swap a performer in one source clip while preserving its scene and timing. | Asset map, one prompt per character, verbatim dialogue, natural camera direction, pre- and post-generation checks |
 | [painterly-action-choreography-engine](painterly-action-choreography-engine/) | Writing fast, legible, continuity-safe AI-video action prompts: fights, chases, escapes, impacts, stunts, image-to-video action shots. | Character locks, location geometry, action logic, camera/edit grammar, continuous video prompt, music/SFX layer, negative constraints, continuity risks |
 | [painterly-cinematic-character-art](painterly-cinematic-character-art/) | Writing Midjourney v8.1 prompts in this Arcane/Mielgo house style, or critiquing character, outfit, creature and location designs. | Copy-pasteable Midjourney prompt blocks (subject + wardrobe + STYLE CORE + params), design logic lines, correction calls, continuity reference recipes |
 | [painterly-multishot-animation-engine](painterly-multishot-animation-engine/) | Turning a story idea and reference images into a set of self-contained, timecoded multi-shot painterly animation prompts. | Per-generation code blocks with timecoded shots, shot size/lens/angle/movement specs, fixed Location/Style/Constraints/Audio metadata, continuity notes |
