@@ -1,73 +1,96 @@
-# gemini-getsu: Google Flow prompt pack
+# gemini-getsu
 
-## بالعربي: السكيل دي بتعمل إيه؟
+### Google Flow prompts for swapping a character while keeping the original scene
 
-**بتكتب لك برومبتات جاهزة للنسخ واللصق في Google Flow.** مش بتولّد فيديو، ومش بتصرف كريدت، ومش بتتصل بأي أداة. شغلها إنها تحوّل فكرتك وملفاتك لخطة صغيرة وبرومبتات مظبوطة، بحيث ما تصرفش كريدت على محاولات مكررة.
+![A shared café tea scene with the creator and three character versions](assets/shared-tea-scene.png)
 
-**الفكرة اللي بتتبعها (نفس اللي اتعمل في الفيديو):** تاخد **مقطع واحد أصلي** وتطلع منه أكتر من نسخة، كل نسخة بشخصية مختلفة، والأداء والحركة والتوقيت والكاميرا فاضلين زي ما هما. شبه فيديوهات Higgsfield Genjutsu، بس بتتعمل في Google Flow.
+*One café scene, one original clip, and three character swaps.*
 
-### بتاخد منك إيه
-1. **مقطع أصلي واحد** (الملف وطوله ونسبة الشاشة).
-2. **صورة مرجعية لكل شخصية** (صورة واحدة لكل شخصية).
-3. **الكلام بالنص** لو حد بيتكلم (باللهجة واللغة زي ما هو).
-4. عدد المقاطع ونسبة الشاشة والستايل (اختياري).
-
-لو ناقص حاجة، بتسألك سؤال واحد قصير بس لو الإجابة هتغيّر النتيجة.
-
-### بتطلّع لك إيه
-1. **خريطة الملفات:** سطر لكل نسخة، مثلاً `نسخة 1 = المقطع الأصلي + صورة المحارب`.
-2. **برومبت مستقل لكل نسخة** في خمس أجزاء بالترتيب: إيه اللي بيتغيّر بس، وإيه اللي بيفضل زي ما هو، وهوية الشخصية والملابس، والكلام بالنص، وقايمة ممنوعات (مفيش ترجمة، ولا نص على الشاشة، ولا لوجو، ولا ناس زيادة، ولا موبايل ظاهر).
-3. **قايمتين فحص:** قبل التوليد (ملف أصلي واحد، صورة واحدة لكل برومبت، الكلام اتنسخ حرف بحرف) وبعد التوليد (نص محروق، لوجو، موبايل في الانعكاس، الحركة مطابقة، الشخصية ثابتة).
-
-### القواعد اللي ما بتتغيّرش
-- **كل نسخة بتتعمل من المقطع الأصلي نفسه**، مش من نتيجة نسخة قبلها. ده اللي بيمنع الانحراف.
-- ما بتخترعش شخصيات ولا مقاطع ولا نص كلام.
-- بدون أسعار أو ادعاءات سرعة أو جودة. النتايج بتختلف من مقطع لمقطع.
-- استبدل شخص بس لو هو موافق، وفي لقطات من حقك تستخدمها.
-
-### إزاي تستخدمها
-- **في Claude Code أو Codex أو أي أداة بتدعم السكيلز:** حط فولدر السكيل في مجلد السكيلز بتاع الأداة، واكتب مثلاً «اكتب لي برومبتات Google Flow لتلات نسخ من المقطع ده» وارفق الملفات.
-- **في أي شات (ChatGPT، Gemini...):** افتح `portable-prompt.md`، انسخه كله، والصق تحته فكرتك وملفاتك.
-- بعد ما تاخد البرومبتات، **انت اللي بتشغّلها** في Google Flow وتراجع النتيجة بقايمة الفحص.
-
-### مثال سريع (بدون تخمين)
-المقطع الأصلي: 8 ثواني في كافيه، شخص بيشرب شاي. التلات نسخ: محارب، جندي، أرنب بنفسجي. الكلام: «الشاي ده مش مظبوط» في الأربعة.
-
-```
-نسخة 1 = SOURCE.mp4 + warrior.png → المحارب
-نسخة 2 = SOURCE.mp4 + soldier.png → الجندي
-نسخة 3 = SOURCE.mp4 + bunny.png  → الأرنب البنفسجي
-```
-وبعدها برومبت لكل نسخة بالشكل ده:
-```
-Use the provided 8-second 16:9 café video as the only video source, and the attached warrior image as the character reference. Alter only the seated person into this same medieval warrior, matching its {{feature list read from the image}}. Adapt its movement to follow the source's exact position, timing and action.
-Preserve the café, the original tea glass, framing, camera movement, lighting and original video style.
-Preserve the source audio exactly, including the Arabic line «الشاي ده مش مظبوط». Add no new dialogue, opening words, music or subtitles.
-This is one character swap only: no extra characters, costumes, props or scene changes, and do not use any previous altered video as the source. No phone or recording device in frame, in anyone's hands, or in reflections.
-```
-(مثال حقيقي بنفس الأسلوب: `examples/khaled-real-prompts.md`.)
-
-### لازم تعرف
-- دي **مش** سكيل ALTER الأصلية، دي مستوحاة منها (ALTER by Scenario، ترخيص MIT). ومش تابعة لـ Google ولا Scenario ولا Higgsfield.
-- السكيل بتكتب البرومبتات، ومكتوب فيها بالنص إنها ما تدّعيش إن فيديو اتولّد إلا لو اتولّد فعلاً.
+[Watch the video](https://youtu.be/rqd7bbIMQ4Q) · [Download this skill](https://github.com/drkhaledalrefay-coder/refay-skills/archive/refs/heads/main.zip)
 
 ---
 
-## English: what does this skill do?
+## بالعربي
 
-**It writes copy-ready prompts for Google Flow.** It does not generate video, spend credits or connect to any tool. It turns your idea and files into a small plan and tight prompts so you do not waste credits on duplicate attempts.
+**gemini-getsu** بتساعدك تكتب برومبتات جاهزة لـ Google Flow عشان تبدّل الشخصية في فيديو موجود، مع الحفاظ على المشهد وحركة الكاميرا والتوقيت والصوت قدر الإمكان.
 
-**The method (the same one used in the video):** take ONE original clip and make several versions of it, each with a different character, while performance, motion, timing and camera stay the same, like Higgsfield Genjutsu videos but made in Google Flow.
+بدل ما تبدأ توليد جديد لكل شخصية، بتحدد فيديو مرجعي واحد وصورة مرجعية لكل شخصية. السكيل ترتّب الملفات وتكتب برومبت مستقل لكل تبديل؛ كل مرة تستخدم الفيديو الأصلي نفسه.
 
-**Inputs:** one source clip, one reference image per character, the exact dialogue if anyone speaks, and optionally clip count, aspect ratio and style. It asks at most one short question, only when the answer changes the result.
+### طريقة الشغل
 
-**Outputs:** (1) an asset map, one line per version; (2) one standalone prompt per version (what changes, what stays, character identity, verbatim dialogue, negatives); (3) a pre-generation checklist and a post-generation QA checklist.
+```text
+فيديو أصلي + صورة شخصية 1 → برومبت التبديل 1
+فيديو أصلي + صورة شخصية 2 → برومبت التبديل 2
+فيديو أصلي + صورة شخصية 3 → برومبت التبديل 3
+```
 
-**Fixed rules:** every version comes from the SAME original clip, never from another version's output; no invented characters, clips or dialogue; no price, speed or quality claims; recast only people who agreed, in footage you may use.
+### هتحتاج إيه؟
 
-**How to use it:** drop the folder into your agent's skills folder (Claude Code, Codex and similar) and ask for Google Flow prompts with your files attached; or paste `portable-prompt.md` into any chat. You run the prompts in Google Flow yourself and review results with the QA checklist.
+| الملف أو المعلومة | المطلوب |
+| --- | --- |
+| الفيديو المرجعي | فيديو واحد هنستخدمه كأساس لكل النسخ |
+| صور الشخصيات | صورة واحدة واضحة لكل شخصية |
+| الحوار | الجملة حرفيًا، مع اللغة واللهجة، لو في كلام |
+| شكل التصوير | اختياري؛ لو ما حددتش، نحافظ على شكل الفيديو الأصلي |
 
-**Credit:** not the original ALTER skill: inspired by ALTER by Scenario (MIT). Not affiliated with Google, Scenario or Higgsfield.
+### السكيل بتطلع إيه؟
+
+- خريطة بسيطة توضح الفيديو والصورة المستخدمة في كل نسخة.
+- برومبت مستقل لكل شخصية، جاهز للنسخ في Google Flow.
+- تأكيد واضح على إيه اللي يتغيّر وإيه اللي يفضل زي ما هو.
+- الحوار بنفس الكلمات واللغة واللهجة اللي كتبتها.
+- قائمة مراجعة قبل التوليد وبعده، عشان تراجع الصوت والشخصية والموبايل والنصوص الظاهرة.
+
+### التثبيت والاستخدام
+
+1. من صفحة المستودع على GitHub، اختار **Code → Download ZIP** وفك الضغط.
+2. انسخ مجلد `cinematic/gemini-getsu` كاملًا إلى مجلد `skills` الخاص بالمساعد اللي بتستخدمه. تأكد إن المسار النهائي فيه `gemini-getsu/SKILL.md`.
+3. افتح محادثة جديدة وأرفق الفيديو الأصلي وصورة مرجعية لكل شخصية.
+4. اطلب مثلًا: **«اكتب لي برومبتات Google Flow لتبديل الشخصيات في الفيديو ده»**.
+5. راجع خريطة الملفات والبرومبتات، وبعدها انسخ كل برومبت بنفسك إلى Google Flow.
+
+لو الأداة اللي بتستخدمها ما بتدعمش Skills، افتح [`portable-prompt.md`](portable-prompt.md)، انسخه والصقه في المحادثة مع فكرتك والملفات.
+
+### مهم قبل التوليد
+
+- كل تبديل يبدأ من **الفيديو الأصلي نفسه**؛ ما تستخدمش نتيجة تبديل سابقة كمصدر للتبديل اللي بعده.
+- ما تضيفش حوارًا من عندك. لو في كلام، ابعت النص مضبوطًا زي ما عايزه يتقال.
+- السكيل بتكتب البرومبتات فقط؛ أنت اللي بتشغّلها في Google Flow وتراجع النتيجة.
+- استخدم فيديوهات وصور عندك حق استخدامها، وخد موافقة الشخص لو هتبدّل هويته.
 
 ---
-*Created by **Khaled Al Refay** · Licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/) · Inspired by ALTER by Scenario (scenario-alter, MIT)*
+
+## English
+
+**gemini-getsu** helps you write ready-to-paste Google Flow prompts for changing the performer in an existing clip while asking Flow to preserve the scene, camera movement, timing and audio as closely as possible.
+
+Start with one source video and one reference image for each target character. The skill maps the assets and writes a separate prompt for each swap. Every prompt uses the original video again; outputs are never chained together.
+
+### What it returns
+
+- A short asset map for every version.
+- One standalone Google Flow prompt per character.
+- Clear instructions about what changes and what stays consistent.
+- Dialogue copied exactly in its original language and dialect.
+- Pre-generation and post-generation checklists for identity, audio, camera continuity and visible artifacts.
+
+### Install and use
+
+1. On GitHub, choose **Code → Download ZIP**, then extract the archive.
+2. Copy the complete `cinematic/gemini-getsu` folder into your AI assistant's `skills` directory. The final path should contain `gemini-getsu/SKILL.md`.
+3. Start a new chat and attach the original clip plus one reference image per character.
+4. Ask for Google Flow prompts for the character swaps.
+5. Review the asset map and prompts, then run them yourself in Google Flow.
+
+For an assistant without Skills support, copy [`portable-prompt.md`](portable-prompt.md) into the chat instead.
+
+### Folder contents
+
+| File | Purpose |
+| --- | --- |
+| [`SKILL.md`](SKILL.md) | Instructions for AI assistants that support skills |
+| [`portable-prompt.md`](portable-prompt.md) | Paste-in version for any chat assistant |
+| [`FIRST_COMMENT.md`](FIRST_COMMENT.md) | Simple YouTube comment copy |
+| [`assets/shared-tea-scene.png`](assets/shared-tea-scene.png) | The café scene artwork shown above |
+
+The skill plans prompts only. You choose when to generate, which assets to use, and whether each result is ready to share.
