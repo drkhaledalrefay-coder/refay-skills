@@ -1,5 +1,5 @@
 ---
-name: grok-team-room
+name: grok-bot-team
 description: >-
   Organize a substantial project task in Grok Bot by creating a focused team
   room, recruiting suitable agents, and, when a registered machine is available,
@@ -12,7 +12,7 @@ license: CC-BY-4.0
 source: https://github.com/drkhaledalrefay-coder
 ---
 
-# Grok Team Room
+# Grok Bot Team
 
 Set up a focused project room and coordinate the agents and optional local CLI tools that Grok Bot can actually access.
 

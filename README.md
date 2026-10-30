@@ -1,4 +1,4 @@
-<!-- living-readme: last-sync d6f3ae5 2026-10-26 -->
+<!-- living-readme: last-sync 778a3a7 2026-10-30 -->
 
 # 🧰 Refay Skills
 
@@ -29,7 +29,7 @@ Not sure where to start? Find your goal below.
 | **Design characters in a painterly cinematic style** | [painterly-cinematic-character-art](cinematic/painterly-cinematic-character-art/) |
 | **Generate multi-shot animation sequences** | [painterly-multishot-animation-engine](cinematic/painterly-multishot-animation-engine/) |
 | **Organize assets in Higgsfield** | [higgsfield-folder-organizer](cinematic/higgsfield-folder-organizer/) |
-| **Make my AI agents work together on a big task** | [fleet-orchestrator](agent-fleet/fleet-orchestrator/), [fleet-conductor](agent-fleet/fleet-conductor/) or [grok-team-room](agent-fleet/grok-team-room/) |
+| **Make my AI agents work together on a big task** | [fleet-orchestrator](agent-fleet/fleet-orchestrator/), [fleet-conductor](agent-fleet/fleet-conductor/) or [grok-bot-team](agent-fleet/grok-bot-team/) |
 | **Produce an explainer/cinematic video with an agent fleet** | [motion-forge](agent-fleet/motion-forge/) |
 | **Build a scroll-driven cinematic hero for my website** | [cinematic-hero](vibe-coding/cinematic-hero/) |
 | **Architect a new project to professional standards** | [vibe-architect](vibe-coding/vibe-architect/) |
@@ -65,7 +65,7 @@ Not sure where to start? Find your goal below.
 | [fleet-conductor](agent-fleet/fleet-conductor/) | Conduct a multi-agent fleet as a planner and judge, delegating multi-step execution tasks. |
 | [fleet-orchestrator](agent-fleet/fleet-orchestrator/) | Make any main AI find, recruit and conduct every AI agent on your computer — free ones first — and verify their work. |
 | [motion-forge](agent-fleet/motion-forge/) | Produce a professional explainer or cinematic video by orchestrating an installed agent fleet. |
-| [grok-team-room](agent-fleet/grok-team-room/) | Set up a Grok Bot project room, recruit suitable agents and coordinate optional CLI agents on a registered machine. |
+| [grok-bot-team](agent-fleet/grok-bot-team/) | Set up a Grok Bot project room, recruit suitable agents and coordinate optional CLI agents on a registered machine. |
 
 ### [🛠️ Vibe coding — build & audit](vibe-coding/README.md) (5 skills)
 
@@ -126,13 +126,13 @@ Every skill in this repo follows one format: a kebab-case folder whose entry poi
 
 ## 🧪 Testing and maintenance
 
-**As of 2026-10-25:** This repository has no automated test suite and no CI pipeline. Quality is maintained through:
+**As of 2026-10-30:** This repository has no automated test suite and no CI pipeline. Quality is maintained through:
 
 - The **skill standard** ([docs/SKILL-STANDARD.md](docs/SKILL-STANDARD.md)) — every skill must pass a format and quality checklist before inclusion.
 - **Author review** — all skills are written and reviewed by the author.
 - **Versioned releases** — changes are tracked in [CHANGELOG.md](CHANGELOG.md) with semantic versioning.
 
-The repository contains 73 tracked files: 58 Markdown files, 3 Python scripts, 3 shell scripts, 2 PowerShell scripts, and 7 other files. Counts come from `git ls-files` and the `living-readme` facts report.
+The repository contains 77 tracked files: 62 Markdown files, 3 Python scripts, 3 shell scripts, 2 PowerShell scripts, and 7 other files. Counts come from `git ls-files` and the `living-readme` facts report.
 
 ---
 

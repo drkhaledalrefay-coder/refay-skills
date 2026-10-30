@@ -1,4 +1,4 @@
-# grok-team-room
+# Grok Bot Team
 
 A skill for Grok Bot that turns a substantial, multi-step task into a focused project room: it selects useful agent roles, checks for suitable existing teammates, and can discover optional CLI agents on a registered user machine.
 
@@ -20,7 +20,7 @@ The exact room and machine features depend on the connected Grok Bot environment
 
 ## Install
 
-Add the `grok-team-room` folder to Grok Bot's supported skills location, or provide its `SKILL.md` as skill context if the client supports that method. Follow the installation method documented by the Grok Bot environment in use; this repository does not assume a universal installer.
+Add the `grok-bot-team` folder to Grok Bot's supported skills location, or provide its `SKILL.md` as skill context if the client supports that method. Follow the installation method documented by the Grok Bot environment in use; this repository does not assume a universal installer.
 
 The folder contains:
 
