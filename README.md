@@ -1,10 +1,10 @@
-<!-- living-readme: last-sync a620868 2026-10-25 -->
+<!-- living-readme: last-sync 778a3a7 2026-10-30 -->
 
 # 🧰 Refay Skills
 
 **Free, ready-to-use AI agent skills** for cinematic AI filmmaking, agent fleets, vibe coding and marketing.
 
-![Skills](https://img.shields.io/badge/Skills-21-blue?style=for-the-badge) ![License](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey?style=for-the-badge) ![Works with](https://img.shields.io/badge/Works%20with-Claude%20%C2%B7%20ChatGPT%20%C2%B7%20Codex-orange?style=for-the-badge)
+![Skills](https://img.shields.io/badge/Skills-22-blue?style=for-the-badge) ![License](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey?style=for-the-badge) ![Works with](https://img.shields.io/badge/Works%20with-Claude%20%C2%B7%20ChatGPT%20%C2%B7%20Codex-orange?style=for-the-badge)
 
 ## What is a skill?
 
@@ -29,7 +29,7 @@ Not sure where to start? Find your goal below.
 | **Design characters in a painterly cinematic style** | [painterly-cinematic-character-art](cinematic/painterly-cinematic-character-art/) |
 | **Generate multi-shot animation sequences** | [painterly-multishot-animation-engine](cinematic/painterly-multishot-animation-engine/) |
 | **Organize assets in Higgsfield** | [higgsfield-folder-organizer](cinematic/higgsfield-folder-organizer/) |
-| **Make my AI agents work together on a big task** | [fleet-orchestrator](agent-fleet/fleet-orchestrator/) or [fleet-conductor](agent-fleet/fleet-conductor/) |
+| **Make my AI agents work together on a big task** | [fleet-orchestrator](agent-fleet/fleet-orchestrator/), [fleet-conductor](agent-fleet/fleet-conductor/) or [grok-bot-team](agent-fleet/grok-bot-team/) |
 | **Produce an explainer/cinematic video with an agent fleet** | [motion-forge](agent-fleet/motion-forge/) |
 | **Build a scroll-driven cinematic hero for my website** | [cinematic-hero](vibe-coding/cinematic-hero/) |
 | **Architect a new project to professional standards** | [vibe-architect](vibe-coding/vibe-architect/) |
@@ -58,13 +58,14 @@ Not sure where to start? Find your goal below.
 | [painterly-style-prompting](cinematic/painterly-style-prompting/) | Translate project briefs and references into concrete rendering instructions for painterly images and video. |
 | [painterly-world-building-engine](cinematic/painterly-world-building-engine/) | Design coherent painterly cinematic worlds built from locked identity, world logic, and visual language. |
 
-### [🤖 Agent fleet — orchestration](agent-fleet/README.md) (3 skills)
+### [🤖 Agent fleet — orchestration](agent-fleet/README.md) (4 skills)
 
 | Skill | What it does |
 | :--- | :--- |
 | [fleet-conductor](agent-fleet/fleet-conductor/) | Conduct a multi-agent fleet as a planner and judge, delegating multi-step execution tasks. |
 | [fleet-orchestrator](agent-fleet/fleet-orchestrator/) | Make any main AI find, recruit and conduct every AI agent on your computer — free ones first — and verify their work. |
 | [motion-forge](agent-fleet/motion-forge/) | Produce a professional explainer or cinematic video by orchestrating an installed agent fleet. |
+| [grok-bot-team](agent-fleet/grok-bot-team/) | Set up a Grok Bot project room, recruit suitable agents and coordinate optional CLI agents on a registered machine. |
 
 ### [🛠️ Vibe coding — build & audit](vibe-coding/README.md) (5 skills)
 
@@ -125,13 +126,13 @@ Every skill in this repo follows one format: a kebab-case folder whose entry poi
 
 ## 🧪 Testing and maintenance
 
-**As of 2026-10-25:** This repository has no automated test suite and no CI pipeline. Quality is maintained through:
+**As of 2026-10-30:** This repository has no automated test suite and no CI pipeline. Quality is maintained through:
 
 - The **skill standard** ([docs/SKILL-STANDARD.md](docs/SKILL-STANDARD.md)) — every skill must pass a format and quality checklist before inclusion.
 - **Author review** — all skills are written and reviewed by the author.
 - **Versioned releases** — changes are tracked in [CHANGELOG.md](CHANGELOG.md) with semantic versioning.
 
-The repository contains 73 tracked files: 58 Markdown files, 3 Python scripts, 3 shell scripts, 2 PowerShell scripts, and 7 other files. Counts come from `git ls-files` and the `living-readme` facts report.
+The repository contains 77 tracked files: 62 Markdown files, 3 Python scripts, 3 shell scripts, 2 PowerShell scripts, and 7 other files. Counts come from `git ls-files` and the `living-readme` facts report.
 
 ---
 
@@ -143,7 +144,7 @@ The repository contains 73 tracked files: 58 Markdown files, 3 Python scripts, 3
 
 ## 👤 About the author
 
-**Khaled Al Refay** — a pharmacist who builds with AI. Creator and maintainer of all 21 skills in this collection.
+**Khaled Al Refay** — a pharmacist who builds with AI. Creator and maintainer of all 22 skills in this collection.
 
 GitHub: [drkhaledalrefay-coder](https://github.com/drkhaledalrefay-coder)
 
@@ -163,7 +164,7 @@ Include this line wherever you share or adapt these skills:
 
 ## 🗺️ Changelog
 
-The collection has **21 skills across 4 categories** as of 2026-10-25. The latest release is **1.2.0** (2026-10-12); newer work is listed under Unreleased in [CHANGELOG.md](CHANGELOG.md).
+The collection has **22 skills across 4 categories** as of 2026-10-30. The latest release is **1.2.0** (2026-10-12); newer work is listed under Unreleased in [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
