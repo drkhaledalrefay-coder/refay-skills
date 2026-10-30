@@ -1,5 +1,7 @@
 # Grok Bot Team
 
+![Grok Bot Team project crew](assets/grok-bot-team.jpg)
+
 A skill for Grok Bot that turns a substantial, multi-step task into a focused project room: it selects useful agent roles, checks for suitable existing teammates, and can discover optional CLI agents on a registered user machine.
 
 It keeps the work grounded in the tools actually available to Grok Bot. A machine or CLI is never assumed, and the skill does not claim an agent or command ran unless the connected tool confirms it.
