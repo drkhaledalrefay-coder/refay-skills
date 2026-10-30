@@ -1,6 +1,6 @@
 # 🤖 Agent fleet — orchestration skills
 
-Three skills for running a fleet of AI coding agents instead of doing every step yourself: a commander that plans, dispatches, time-boxes and judges; a router that probes which local CLIs actually work and sends each job to the right model; and a video conductor that drives whatever fleet is installed through a full motion-graphics or cinematic edit at zero paid-generation cost.
+Four skills for running a fleet of AI coding agents instead of doing every step yourself: a commander that plans, dispatches, time-boxes and judges; a router that probes which local CLIs actually work and sends each job to the right model; and a video conductor that drives whatever fleet is installed through a full motion-graphics or cinematic edit at zero paid-generation cost.
 
 | Skill | Use it when | Key outputs |
 | :--- | :--- | :--- |
