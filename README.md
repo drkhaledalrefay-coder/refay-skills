@@ -164,7 +164,7 @@ Include this line wherever you share or adapt these skills:
 
 ## 🗺️ Changelog
 
-The collection has **22 skills across 4 categories** as of 2026-10-26. The latest release is **1.2.0** (2026-10-12); newer work is listed under Unreleased in [CHANGELOG.md](CHANGELOG.md).
+The collection has **22 skills across 4 categories** as of 2026-10-30. The latest release is **1.2.0** (2026-10-12); newer work is listed under Unreleased in [CHANGELOG.md](CHANGELOG.md).
 
 ---
 
