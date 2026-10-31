@@ -1,5 +1,7 @@
 # Whiteboard Video Producer
 
+**Arabic:** [اقرأ النسخة العربية](README.ar.md) · [المهارة](SKILL.ar.md) · [البرومبت](whiteboard-prompt.ar.md)
+
 Plan and assemble an evidence-led whiteboard explainer with a clear script, timed storyboard, hand-drawn visual direction, and a practical production pipeline.
 
 ## What it helps create
