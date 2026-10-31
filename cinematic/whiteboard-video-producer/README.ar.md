@@ -105,7 +105,7 @@ python cinematic/whiteboard-video-producer/scripts/whiteboard_engine.py --timeli
 python scripts/whiteboard_engine.py --timeline timeline.json --audio voiceover.mp3 --output final.mp4
 ```
 
-إذا لم يكن FFmpeg متاحًا في PATH، أضف `--ffmpeg "C:\\path\\to\\ffmpeg.exe"`.
+إذا لم يكن FFmpeg متاحًا في PATH، أضف `--ffmpeg "C:\path\to\ffmpeg.exe"`.
 
 تلائم الأداة كل لوحة إطار الفيديو، وتضيف حوافًا بيضاء للمساحة المتبقية، ثم تصل المشاهد وتُصدّر فيديو H.264 مع صوت AAC. ينتهي الملف عند أقصر المسارين: الفيديو المجمع أو التعليق الصوتي، لأن الأداة تستخدم خيار FFmpeg `-shortest`. تأكد أن مدة التعليق تغطي المدة المطلوبة. راجع الملف النهائي للتزامن والإملاء والوضوح وصحة الادعاءات.
 
