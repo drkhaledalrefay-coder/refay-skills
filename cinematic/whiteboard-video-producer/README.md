@@ -105,7 +105,7 @@ If you are already inside this skill folder:
 python scripts/whiteboard_engine.py --timeline timeline.json --audio voiceover.mp3 --output final.mp4
 ```
 
-If FFmpeg is not on PATH, append `--ffmpeg "C:\\path\\to\\ffmpeg.exe"`.
+If FFmpeg is not on PATH, append `--ffmpeg "C:\path\to\ffmpeg.exe"`.
 
 The helper scales each board to fit the requested frame, pads unused space with white, concatenates scenes, and encodes H.264 video with AAC audio. Output ends at the shorter of the assembled video and narration because FFmpeg's `-shortest` option is used; make sure the narration duration covers the intended runtime. Review the exported file for sync, spelling, legibility, and claim accuracy.
 
