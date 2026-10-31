@@ -1,6 +1,6 @@
 # 🎬 Cinematic — AI filmmaking skills
 
-Eight skills for planning, prompting and producing AI-generated film: Google Flow character swaps, painterly animation, action choreography, character and world design, style locking, and keeping a Higgsfield project organised.
+Nine skills for planning, prompting and producing AI-generated film: Google Flow character swaps, painterly animation, action choreography, character and world design, style locking, and keeping a Higgsfield project organised.
 
 | Skill | Use it when | Key outputs |
 | :--- | :--- | :--- |
@@ -12,6 +12,7 @@ Eight skills for planning, prompting and producing AI-generated film: Google Flo
 | [painterly-short-film](painterly-short-film/) | Starting a painterly (Arcane-style 2.5D) animated short in Higgsfield Seedance, or for @tag, @composition and IDENTITY LOCK questions. | Project folder structure, character-sheet prompts, IDENTITY LOCK blocks, scene prompts with shot/audio sections, upload order, review fix list |
 | [painterly-style-prompting](painterly-style-prompting/) | Creating, revising or reviewing painterly image, animation or video prompts; translating briefs and references into rendering language. | Reusable style-lock paragraphs, concrete rendering choices, self-contained executable prompts, categorized review findings, final check |
 | [painterly-world-building-engine](painterly-world-building-engine/) | Designing painterly cinematic worlds: visual bibles, characters, environments, props and keyframes; extending a film's look across scenes. | Source and character locks, visual world block, environment block, keyframe prompt, negative/failure-prevention prompt, required references, continuity notes |
+| [whiteboard-video-producer](whiteboard-video-producer/) | Planning Arabic/English whiteboard explainers with verified claims, timed storyboards, and export guidance. | Narration, scene table, asset/claim checks, FFmpeg assembly helper, publishing package |
 
 ---
 
