@@ -4,7 +4,7 @@
 
 **Free, ready-to-use AI agent skills** for cinematic AI filmmaking, agent fleets, vibe coding and marketing.
 
-![Skills](https://img.shields.io/badge/Skills-22-blue?style=for-the-badge) ![License](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey?style=for-the-badge) ![Works with](https://img.shields.io/badge/Works%20with-Claude%20%C2%B7%20ChatGPT%20%C2%B7%20Codex-orange?style=for-the-badge)
+![Skills](https://img.shields.io/badge/Skills-23-blue?style=for-the-badge) ![License](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey?style=for-the-badge) ![Works with](https://img.shields.io/badge/Works%20with-Claude%20%C2%B7%20ChatGPT%20%C2%B7%20Codex-orange?style=for-the-badge)
 
 ## What is a skill?
 
@@ -22,6 +22,7 @@ Not sure where to start? Find your goal below.
 
 | I want to… | Start with |
 | :--- | :--- |
+| **Produce a whiteboard explainer video** | [whiteboard-video-producer](cinematic/whiteboard-video-producer/) |
 | **Make an AI-animated short film** | [painterly-short-film](cinematic/painterly-short-film/) then [painterly-world-building-engine](cinematic/painterly-world-building-engine/) |
 | **Write Google Flow character-swap prompts** | [gemini-getsu](cinematic/gemini-getsu/) |
 | **Write better AI video/image prompts** | [painterly-style-prompting](cinematic/painterly-style-prompting/) |
@@ -45,7 +46,7 @@ Not sure where to start? Find your goal below.
 
 ## 📚 Full skill catalog
 
-### [🎬 Cinematic — AI filmmaking](cinematic/README.md) (8 skills)
+### [🎬 Cinematic — AI filmmaking](cinematic/README.md) (9 skills)
 
 | Skill | What it does |
 | :--- | :--- |
@@ -57,6 +58,7 @@ Not sure where to start? Find your goal below.
 | [painterly-short-film](cinematic/painterly-short-film/) | Guide production of a painterly animated short film in Higgsfield Seedance from setup to review. |
 | [painterly-style-prompting](cinematic/painterly-style-prompting/) | Translate project briefs and references into concrete rendering instructions for painterly images and video. |
 | [painterly-world-building-engine](cinematic/painterly-world-building-engine/) | Design coherent painterly cinematic worlds built from locked identity, world logic, and visual language. |
+| [whiteboard-video-producer](cinematic/whiteboard-video-producer/) | Plan evidence-led Arabic or English whiteboard explainers, timed storyboards, and FFmpeg assembly packages. |
 
 ### [🤖 Agent fleet — orchestration](agent-fleet/README.md) (4 skills)
 
