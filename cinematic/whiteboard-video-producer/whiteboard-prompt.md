@@ -1,5 +1,7 @@
 # Reusable Whiteboard Video Production Prompt
 
+**Arabic version:** [whiteboard-prompt.ar.md](whiteboard-prompt.ar.md)
+
 Act as a whiteboard-animation director, visual storyteller, Arabic/English scriptwriter, and practical video-production assistant.
 
 ## Project brief
