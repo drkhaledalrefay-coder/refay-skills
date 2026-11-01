@@ -1,7 +1,7 @@
 ---
 name: seedance-anime-story
 description: >
-  Production method for a 60-second kids anime short on Higgsfield Seedance 2.0 or Seedance 2.0 Mini, with Seedream stills. Use when the user asks for a Seedance kids story, a hadith/moral animation on Higgsfield, Seedream sheets then Seedance blocks, @image references with a start image, or a side-by-side with Google Flow. Confirms model, tier, and cost before any generation.
+  Production method for a 60-second kids anime short on Higgsfield Seedance 2.0 or Seedance 2.0 Mini, with Seedream stills. Works for any story and any lead character (a girl, a boy, an old man, an animal companion or none). Use when the user asks for a Seedance kids story, a moral or hadith animation on Higgsfield, Seedream sheets then Seedance blocks, @image references with a start image, or a side-by-side with Google Flow. If the user has no story, suggest three and build from the one they pick. Confirms model, tier and cost before any generation.
 author: Khaled Al Refay
 license: CC-BY-4.0
 source: https://github.com/drkhaledalrefay-coder
@@ -9,124 +9,84 @@ source: https://github.com/drkhaledalrefay-coder
 
 # Seedance anime story (kids, 60 seconds)
 
-Same film pipeline as Flow: lock the story, make free stills, then animate. The prompt format is Seedance's, not Flow's @ picker paragraph.
+Same film pipeline as the Flow skill: lock the story, make free stills, then animate. The prompt format is Seedance's block format, not Flow's @ paragraph.
 
-Images: **Seedream** (free on the plan used in the notes; the comparison names Seedream 4.5).
-Video: **Seedance 2.0** or **Seedance 2.0 Mini** on Higgsfield.
+The assistant plans and writes the prompts. The user confirms the model and spend, and generates in Higgsfield.
 
-**Always confirm model, tier, and cost with the user before generating.** The only measured price in these notes is Mini.
+## 1. Before any generation: confirm model, tier and cost
 
-Full block rules: `references/prompt-blocks.md`. The example film's seven prompts (reference only): `examples/roqa-kids-anime/worked-shots-seedance.md`.
+Ask and wait for a clear answer:
+- Which model: Seedance 2.0 Mini or full 2.0.
+- Which resolution and length.
+- The cost shown on the Higgsfield page for that choice.
 
-## No story yet? Suggest one first
+Never switch to a bigger model or a longer clip without a fresh yes. Measured costs on one project, for reference only: Seedance 2.0 Mini, 8 credits per 8 s at 720p; full 2.0, 67.5 credits for a 15 s 720p clip. Prices change, so confirm on the page.
 
-If the user has no story, do not stop. Propose three short story options in one table, each with: a moral or hadith line (to verify), one child character, one animal or friend, one place, and a 60-second beat sheet. Ask the user to pick one, or to change one detail. Then write the Seedream sheets, the keyframes and the Seedance blocks from the chosen story. Never invent a quote or hadith: if the moral is religious, use a line the user supplies or one checked against a reliable source.
+## 2. Story (or suggest one)
 
-## Story lock
+If the user has a story, use it. If not, suggest three short options in one table: a moral or hadith line (to verify), one lead character, an optional companion, one place, and a 60-second beat sheet of seven or eight shots. The user picks one. Never invent a quote. A religious line is used only if the user supplies it or it is checked on a reliable source.
 
-Same story as the Flow film so the comparison stays fair: same beats, same intention, same style sentence.
+## 3. Language limit (important)
 
-- Hadith for the edit card only (not inside the generator): «في كل ذات كبد رطبة أجر». Check the exact on-screen wording and source on sunnah.com before publish. The notes attribute it to al-Bukhari and Muslim and say not to publish unverified wording.
-- 7 shots × 8 seconds, 16:9, one continuous shot each. The camera does not cut on its own.
-- Kid-safe. No child body description. Hair, outfit, satchel, bottle.
-- No music.
+Seedance prompts are written in English. In testing, Arabic speech did not come out of Seedance 2.0 Mini. Plan the dialogue for the edit (recorded voice in Arabic, laid over the picture), or keep the shots silent with ambience only.
 
-## Speech limit (measured)
+## 4. Locks
 
-Seedance prompts are **English**. This Mini batch asked for Egyptian Arabic lines. **Arabic speech did not come out.** Flow is the path that produced Arabic (Whisper confirmed Flow's five lines).
+- **CHARACTER LOCK.** Age as a wholesome phrase, hair, outfit, palette, one signature prop. Kid-safe: no body proportions for children.
+- **COMPANION LOCK (optional).** Type, colour, markings, eyes, size, mood in this shot.
+- **STYLE LOCK.** One sentence placed in the STYLE block, identical in every prompt.
+- **LOCATION LOCK.** Place, time of day, light, palette. Put the location as a suffix on every keyframe.
+- **AUDIO.** Ambience named. End with: "No music. No text or subtitles."
 
-For a new Seedance shot pick one:
+## 5. Sheets and keyframes (Seedream, free on the plan used)
 
-- **No speech** (ambience only), and record Arabic in the edit, or
-- An **English** line, if English is acceptable for that film.
+1. Seedream character sheet for each lead character (front, side, back, close-up), plain warm background, no text. Generate two, pick one.
+2. Companion sheet, if there is one.
+3. Seedream keyframe per shot. Attach the character sheet, and the companion sheet only when that companion is in frame. Add the location suffix.
+4. Approve every sheet before any video.
 
-Do not promise Arabic lip-sync from Seedance. The worked example keeps the Arabic lines that were actually submitted, and those lines are the dialogue gap, not a method to copy for Arabic.
+## 6. Seedance blocks
 
-## Pipeline
+For each shot, write only the blocks the shot needs, in this order. The prompt opens on SCENE CONTEXT. Style is not a prefix.
 
-1. Seedream character sheet, then animal sheet, plain warm cream background, no text.
-2. Seedream keyframes. Attach the girl sheet, and the kitten sheet when the kitten is in frame. Add the common location suffix.
-3. Seedance: `start_image` = that shot's keyframe. `image_references`: `@image1` = girl sheet, `@image2` = kitten sheet only if the kitten is in frame. Never tag a reference that is not in the shot.
-4. Settings used for the comparison: 16:9, 720p, 8 s, native audio on, model `seedance_2_0_mini`.
-5. If Higgsfield suggests a preset (this run suggested "IN THE DARK"), decline it and submit the written prompt.
-6. Each prompt is a sealed shot. No "as above", no previous scene number the model must remember, no unused character.
+1. SCENE CONTEXT: one or two sentences, what happens and where.
+2. ACTIVE REFERENCES: `start_image` = that shot's keyframe. `image_references`: `@image1` = character sheet, `@image2` = companion sheet only if it is in frame. Never tag a reference that is not in the shot.
+3. LOCATION MAP: foreground, midground, background, where the camera is, where the light comes from.
+4. FIRST FRAME / BLOCKING: who is where at the first frame.
+5. OPTICS: shot size and FOV in degrees (use the steps 107, 84, 63, 47, 29, 18, 12, 8).
+6. CAMERA: one move, motivated, with speed in km/h or % of the frame. Put the CAMERA block third.
+7. ACTION: a timeline (0–2 s, 2–5 s, 5–8 s), with the camera motion and the subject motion stated separately.
+8. PERFORMANCE: the emotion as muscle movement, not a label ("her shoulders drop, she swallows once").
+9. LIGHTING and COLOUR (as material and light, not a list).
+10. AUDIO: ambience only, or the edit voice.
+11. STYLE and OUTPUT SETTINGS: the STYLE LOCK sentence and the resolution, placed just before the locks.
+12. POSITIVE LOCKS: the continuity fixers, in positive form ("same outfit, prop stays in the named hand").
 
-The user generates Seedream stills. Confirm cost, then generate video.
+Write everything positively. "Still, not moving" is written as "stays still in frame".
 
-## Prompt blocks
+## 7. Shot list (example shape)
 
-Write only the blocks the shot needs, in this order. Style is not a prefix. The prompt opens on SCENE CONTEXT. The look sentence sits in STYLE, near the end. Full rules and the FOV table are in `references/prompt-blocks.md`.
+Seven shots of 8 s each, one change per shot: setup, problem, a choice, a turn, a resolution, a payoff. Show the shot names and the camera for each in a table before writing blocks.
 
-```
-SCENE CONTEXT
-ACTIVE REFERENCES
-LOCATION MAP
-FIRST FRAME / BLOCKING
-FORMAT MODE
-OPTICS
-CAMERA
-ACTION
-PERFORMANCE          (when acting matters)
-PHYSICS              (when liquid or contact matters)
-LIGHTING
-AUDIO
-STYLE
-POSITIVE LOCKS
-```
+## 8. Edit
 
-Rules that this film actually followed:
+- The end card (moral or hadith with its source) is built in the edit. Verify the exact wording first.
+- Letterbox bars are an edit fix, not a prompt fix.
+- Captions optional. Loudness about −16 LUFS for a kids film.
+- A side-by-side with Flow: same story, same locks, same sheets when possible, so the comparison is fair.
 
-- `@image1` / `@image2` by load order, plus a short identity line and "100% matches the reference."
-- Keep the identity line short so it does not fight the reference image.
-- Shot size plus **FOV in degrees** from the anchor steps (47°, 29°, 63° on this film). Not millimetres.
-- Camera speed in **km/h** (1 km/h push, 2 km/h dolly or crane). Subject walk speeds were 2 km/h and 3 km/h.
-- White balance in kelvin when light is specified (5600K noon, 5200K, 4500K shade bounce, 3800K late afternoon).
-- Left and right are from the camera.
-- Emotion as muscle: brows lift, she swallows, dry lips, smile at the corners. Not the word "sad" alone.
-- Positive locks: same girl, same outfit, prop stays in the named hand, water goes into the lid.
-- FORMAT MODE on every shot: one continuous shot, the camera does not cut on its own.
+## 9. Checklist
 
-## Camera language used on the seven shots
+- [ ] Model, tier and cost confirmed by the user
+- [ ] Story and moral chosen; any quote verified
+- [ ] Locks written; character and companion are kid-safe
+- [ ] Sheets and keyframes approved before video
+- [ ] start_image is this shot's keyframe; only tagged references are in the shot
+- [ ] Prompt has all the blocks it needs, in order, in positive form
+- [ ] Arabic dialogue planned for the edit (not spoken by Seedance Mini)
+- [ ] End card built outside the generator, wording verified
+- [ ] Review: face, outfit, companion, extra limbs, stray text
 
-| Shot | Optics | Camera |
-|---|---|---|
-| V1 hot noon | WS at 47° | Eye-level, slow dolly-in at 2 km/h |
-| V2 the kitten | MS at 47°, easing to MCU at 29° | Eye-level push-in at 1 km/h, then lowers to the kitten |
-| V3 so thirsty | CU at 29° | Ground level, tilt-up at 1 km/h to her face |
-| V4 the choice | MCU at 29° | Eye-level push-in at 1 km/h |
-| V5 sharing | MS at 47°, slight push toward the lid | Low eye-level, push-in at 1 km/h |
-| V6 she drinks | MS at 47° | Ground-level drift left to right at 1 km/h |
-| V7 walking home | WS at 47°, opening to EWS at 63° | Crane-up and pull-back at 2 km/h |
+## Example
 
-## Credits (from the notes)
-
-Confirm again on the account before you spend. Prices below are what this comparison measured, not a rate card for every tier.
-
-| Item | Measured cost |
-|---|---|
-| Seedream sheets and keyframes | Free on the plan used |
-| Seedance 2.0 Mini, 8 s, 720p, 16:9, audio on | **8 credits** each |
-| 7 Mini shots | **56 credits** |
-| Seedance 2.0 (full, not Mini) | **Not priced in these notes.** Ask before generating |
-
-Flow, for the same 7 shots, was 12 credits each (84 total) at 1080p, 24 fps. Mini here was 720p. The notes' verdict: Flow carried Arabic dialogue; Mini was brighter, cleaner, more TV-anime, with smoother motion and stronger consistency (start image + two references). Best combined result in the notes: Seedance picture + Arabic voice added in the edit. Visual retakes on this Mini batch: 0. No visual failures were logged. The gap is speech.
-
-## Child wording
-
-Same boundary as Flow. The sheet prompt used in the example film: cute 7-year-old Egyptian girl, round face, big warm brown eyes, two braids with small red hair ties, yellow T-shirt, blue denim overalls, brown leather crossbody satchel, white sneakers. No body proportions.
-
-## Edit
-
-Letterbox bars were a Flow problem (3 shots), not logged on Mini. Captions optional. Hadith end card is built outside the generator. If Mini is the picture, lay the Arabic lines in the edit.
-
-## Checklist
-
-- [ ] User confirmed model (2.0 or 2.0 Mini), tier, 8 s, 16:9, resolution, audio on/off, and credit cost
-- [ ] Speech plan is no speech, or English — not an Arabic promise
-- [ ] Seedream sheet and keyframe exist; start_image is this shot's frame
-- [ ] @image tags only for subjects in frame, each with "100% matches the reference"
-- [ ] Blocks in order, prompt opens on SCENE CONTEXT, STYLE near the end
-- [ ] FOV in degrees from the anchor table, speeds in km/h, light in kelvin
-- [ ] One continuous shot, positive locks on identity and props
-- [ ] Preset suggestion declined if it changes the look
-- [ ] Hadith card and any Arabic voice planned for the edit
+A complete example film (seven shots, prompts and locks) is in the repository at `examples/roqa-kids-anime/`. It is one story, shown for reference only.
