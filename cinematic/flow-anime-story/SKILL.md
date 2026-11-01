@@ -15,6 +15,10 @@ The assistant plans and judges. The user generates inside Flow.
 
 Verified on one example film (7 shots, Omni 1.1 Flash, first try on every shot). The example prompts are not part of this method: see `examples/roqa-kids-anime/` in the repo only if you want a reference. Paste blocks: `references/locks.md`. Blank template: `references/shot-prompt.md`.
 
+## No story yet? Suggest one first
+
+If the user has no story, do not stop. Propose three short story options in one table, each with: a moral or hadith line (to verify), one child character, one animal or friend, one place, and a 60-second beat sheet. Ask the user to pick one, or to change one detail. Then write the locks and shots from the chosen story. Never invent a quote or hadith: if the moral is religious, use a line the user supplies or one checked against a reliable source.
+
 ## 1. Story lock
 
 Lock these before any image:

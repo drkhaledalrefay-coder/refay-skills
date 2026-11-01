@@ -18,6 +18,10 @@ Video: **Seedance 2.0** or **Seedance 2.0 Mini** on Higgsfield.
 
 Full block rules: `references/prompt-blocks.md`. The example film's seven prompts (reference only): `examples/roqa-kids-anime/worked-shots-seedance.md`.
 
+## No story yet? Suggest one first
+
+If the user has no story, do not stop. Propose three short story options in one table, each with: a moral or hadith line (to verify), one child character, one animal or friend, one place, and a 60-second beat sheet. Ask the user to pick one, or to change one detail. Then write the Seedream sheets, the keyframes and the Seedance blocks from the chosen story. Never invent a quote or hadith: if the moral is religious, use a line the user supplies or one checked against a reliable source.
+
 ## Story lock
 
 Same story as the Flow film so the comparison stays fair: same beats, same intention, same style sentence.
