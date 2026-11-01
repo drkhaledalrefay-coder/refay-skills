@@ -11,6 +11,7 @@ Two free AI agent skills that guide you from a short story to a 60-second kids a
 
 Both work for any story and any lead character: a girl, a boy, an old man, with or without an animal companion. If you have no story, the skill suggests three and builds from the one you pick.
 
+- Full guide for each skill: [flow](flow/README.md) · [seedance](seedance/README.md)
 - Skill files: [flow-anime-story/SKILL.md](../flow-anime-story/SKILL.md) · [seedance-anime-story/SKILL.md](../seedance-anime-story/SKILL.md)
 - One finished example film (for reference only): [examples/roqa-kids-anime](../examples/roqa-kids-anime/)
 
