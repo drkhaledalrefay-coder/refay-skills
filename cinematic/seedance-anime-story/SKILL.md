@@ -16,7 +16,7 @@ Video: **Seedance 2.0** or **Seedance 2.0 Mini** on Higgsfield.
 
 **Always confirm model, tier, and cost with the user before generating.** The only measured price in these notes is Mini.
 
-Full block rules: `references/prompt-blocks.md`. The seven shipped prompts: `references/worked-shots.md`.
+Full block rules: `references/prompt-blocks.md`. The example film's seven prompts (reference only): `examples/roqa-kids-anime/worked-shots-seedance.md`.
 
 ## Story lock
 
@@ -109,7 +109,7 @@ Flow, for the same 7 shots, was 12 credits each (84 total) at 1080p, 24 fps. Min
 
 ## Child wording
 
-Same boundary as Flow. The sheet prompt that was used: cute 7-year-old Egyptian girl, round face, big warm brown eyes, two braids with small red hair ties, yellow T-shirt, blue denim overalls, brown leather crossbody satchel, white sneakers. No body proportions.
+Same boundary as Flow. The sheet prompt used in the example film: cute 7-year-old Egyptian girl, round face, big warm brown eyes, two braids with small red hair ties, yellow T-shirt, blue denim overalls, brown leather crossbody satchel, white sneakers. No body proportions.
 
 ## Edit
 

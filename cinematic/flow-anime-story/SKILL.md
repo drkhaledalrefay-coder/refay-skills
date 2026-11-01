@@ -1,7 +1,7 @@
 ---
 name: flow-anime-story
 description: >
-  Production method for a 60-second kids anime short in Google Flow (Omni 1.1 Flash video, Nano Banana images, Reference-to-Video). Use when the user asks for an anime short in Google Flow, a kids story film, a hadith/moral animation, Flow Omni R2V, character sheets then keyframes, or a Ruqayya-style hand-painted Japanese short. Covers story lock, paste-ready locks, free stills, R2V prompts, credit split, policy rewrites, browser driving, and the edit.
+  Production method for a 60-second kids anime short in Google Flow (Omni 1.1 Flash video, Nano Banana images, Reference-to-Video). Use when the user asks for an anime short in Google Flow, a kids story film, a hadith/moral animation, Flow Omni R2V, character sheets then keyframes, or a hand-painted Japanese-style kids short. Covers story lock, paste-ready locks, free stills, R2V prompts, credit split, policy rewrites, browser driving, and the edit.
 author: Khaled Al Refay
 license: CC-BY-4.0
 source: https://github.com/drkhaledalrefay-coder
@@ -13,13 +13,13 @@ Make a short moral film in Google Flow by locking the story, then the pictures, 
 
 The assistant plans and judges. The user generates inside Flow.
 
-Verified on one film: Ruqayya and a thirsty kitten, 7 shots, Omni 1.1 Flash, first try on every shot. Full prompts: `references/worked-shots.md`. Paste blocks: `references/locks.md`. Blank template: `templates/shot-prompt.md`.
+Verified on one example film (7 shots, Omni 1.1 Flash, first try on every shot). The example prompts are not part of this method: see `examples/roqa-kids-anime/` in the repo only if you want a reference. Paste blocks: `references/locks.md`. Blank template: `references/shot-prompt.md`.
 
 ## 1. Story lock
 
 Lock these before any image:
 
-1. **Moral or hadith.** Keep the exact wording that will appear on screen. Do not paraphrase it inside Flow, and do not put it on a Flow frame. For this project the locked line is «في كل ذات كبد رطبة أجر» (the kitten and the water). The notes say it is narrated by al-Bukhari and Muslim, and that the on-screen wording and source line must be checked on sunnah.com before publish. Flag that check; do not invent a citation.
+1. **Moral or hadith.** Keep the exact wording that will appear on screen. Do not paraphrase it inside Flow, and do not put it on a Flow frame. Confirm the exact line and its source with the user, and check the citation on a reliable hadith database before publish. Flag that check; do not invent a citation.
 2. **One sentence.** A child does one clear kind act. Picture tells the story. No narrator. Only the child speaks, and only if the shot needs it.
 3. **Kid-safe.** No prophets or Companions on screen. Modest clothing. No music in the Flow shots. A nasheed, if any, is a separate project.
 4. **Length.** About 60 seconds. **7 or 8 shots × 8 seconds** inside Flow, then a short end card made outside Flow. 7 × 8s is already longer than 60s, so the edit trims.
@@ -85,7 +85,7 @@ Rule from the session: **every shot = @character sheet + @keyframe** (plus the a
 Prompt shape (template in `templates/shot-prompt.md`):
 
 ```
-Use Reference-to-Video. @… is Ruqayya. @… is the kitten. @… is the scene and composition.
+Use Reference-to-Video. @… is the girl. @… is the kitten. @… is the scene and composition.
 SCENE 0X — TITLE. An exactly 8-second continuous animated shot. [STYLE LOCK]
 [Who is where]. [One action across the 8 seconds]. [Optional line].
 The camera [size, angle, move].
@@ -138,7 +138,7 @@ What actually failed and the fix:
 
 ## 9. Worked example
 
-This project's seven shots, with the prompts that were saved, are in `references/worked-shots.md`. Read that file before writing a new shot for the same film. Do not swap in the superseded v0.1 street, hijab, or mint-dress look.
+For a new film, write the shots from this skill's locks and the shot template. The example film's prompts are in `examples/roqa-kids-anime/worked-shots-flow.md` for reference only; do not copy its characters into a new film.
 
 ## 10. Checklist
 
