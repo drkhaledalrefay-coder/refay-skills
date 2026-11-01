@@ -4,5 +4,5 @@ Reference material from one finished kids anime short, made with the `flow-anime
 
 - `worked-shots-flow.md`: the seven Google Flow shot prompts.
 - `worked-shots-seedance.md`: the seven Seedance shot prompts.
-- `prompt-pack-flow.md`: copy-ready Flow pack. Three shots (S01, S03, S04) are still missing their full text.
+- `prompt-pack-flow.md`: copy-ready Flow pack, all seven shots.
 - `prompt-pack-seedance.md`: copy-ready Seedance pack.
