@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 
 ### Added
 
+- **`flow-anime-story`** (cinematic) — production method for a kids anime short in Google Flow: locks, sheets, R2V shots, credit split, and a worked Roqa example pack.
+- **`seedance-anime-story`** (cinematic) — production method for a kids anime short on Higgsfield Seedance 2.0 / Mini, with Seedream stills and a cost check before generating.
 - **`gemini-getsu`** (cinematic) — writes Google Flow character-swap prompts from one source clip and character reference images, with dialogue and continuity checks.
 - Added the café-scene artwork and clearer Arabic and English install instructions to its README.
 

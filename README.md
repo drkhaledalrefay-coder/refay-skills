@@ -4,7 +4,7 @@
 
 **Free, ready-to-use AI agent skills** for cinematic AI filmmaking, agent fleets, vibe coding and marketing.
 
-![Skills](https://img.shields.io/badge/Skills-23-blue?style=for-the-badge) ![License](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey?style=for-the-badge) ![Works with](https://img.shields.io/badge/Works%20with-Claude%20%C2%B7%20ChatGPT%20%C2%B7%20Codex-orange?style=for-the-badge)
+![Skills](https://img.shields.io/badge/Skills-25-blue?style=for-the-badge) ![License](https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey?style=for-the-badge) ![Works with](https://img.shields.io/badge/Works%20with-Claude%20%C2%B7%20ChatGPT%20%C2%B7%20Codex-orange?style=for-the-badge)
 
 ## What is a skill?
 
@@ -24,6 +24,8 @@ Not sure where to start? Find your goal below.
 | :--- | :--- |
 | **Produce a whiteboard explainer video** | [whiteboard-video-producer](cinematic/whiteboard-video-producer/) |
 | **Make an AI-animated short film** | [painterly-short-film](cinematic/painterly-short-film/) then [painterly-world-building-engine](cinematic/painterly-world-building-engine/) |
+| **Make a kids anime short in Google Flow (locks, sheets, R2V, credits)** | [flow-anime-story](cinematic/flow-anime-story/) |
+| **Make a kids anime short in Seedance / Higgsfield (Seedream sheets, Seedance blocks)** | [seedance-anime-story](cinematic/seedance-anime-story/) |
 | **Write Google Flow character-swap prompts** | [gemini-getsu](cinematic/gemini-getsu/) |
 | **Write better AI video/image prompts** | [painterly-style-prompting](cinematic/painterly-style-prompting/) |
 | **Choreograph an action scene for AI video** | [painterly-action-choreography-engine](cinematic/painterly-action-choreography-engine/) |
@@ -46,10 +48,12 @@ Not sure where to start? Find your goal below.
 
 ## 📚 Full skill catalog
 
-### [🎬 Cinematic — AI filmmaking](cinematic/README.md) (9 skills)
+### [🎬 Cinematic — AI filmmaking](cinematic/README.md) (11 skills)
 
 | Skill | What it does |
 | :--- | :--- |
+| [flow-anime-story](cinematic/flow-anime-story/) | Production method for a 60-second kids anime short in Google Flow: story lock, paste-ready character/style/audio locks, free stills, R2V shots with @ mentions, credit split, policy rewrites and the edit. |
+| [seedance-anime-story](cinematic/seedance-anime-story/) | Production method for a 60-second kids anime short on Higgsfield Seedance 2.0 / Mini with Seedream stills, Seedance prompt blocks, cost check before generating. |
 | [higgsfield-folder-organizer](cinematic/higgsfield-folder-organizer/) | Reorganize assets inside a Higgsfield.ai project via the browser UI without triggering generation. |
 | [gemini-getsu](cinematic/gemini-getsu/) | Write Google Flow prompts to swap a character in one source video, with reference images, exact dialogue and continuity checks. |
 | [painterly-action-choreography-engine](cinematic/painterly-action-choreography-engine/) | Write fast, physically legible, continuity-safe AI-video action prompts for painterly or cinematic films. |

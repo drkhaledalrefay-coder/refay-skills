@@ -1,9 +1,11 @@
 # 🎬 Cinematic — AI filmmaking skills
 
-Nine skills for planning, prompting and producing AI-generated film: Google Flow character swaps, painterly animation, action choreography, character and world design, style locking, and keeping a Higgsfield project organised.
+Eleven skills for planning, prompting and producing AI-generated film: Google Flow character swaps, painterly animation, action choreography, character and world design, style locking, and keeping a Higgsfield project organised.
 
 | Skill | Use it when | Key outputs |
 | :--- | :--- | :--- |
+| [flow-anime-story](flow-anime-story/) | Making a 60-second kids anime short in Google Flow (Omni R2V with @ mentions). | Story lock, character/style/audio locks, sheets, keyframes, R2V shot prompts, credit plan, edit checklist |
+| [seedance-anime-story](seedance-anime-story/) | Making a 60-second kids anime short on Higgsfield Seedance 2.0 / Mini with Seedream stills. | Seedream sheets, Seedance prompt blocks, shot list, cost confirmation before generating |
 | [higgsfield-folder-organizer](higgsfield-folder-organizer/) | Reorganizing images/videos/character sheets inside a Higgsfield.ai project via browser UI: drag-and-drop, multi-select, bulk download. | Folder structure proposal, drag-and-drop moves, multi-select bulk-download zips, per-folder item counts, final structure report |
 | [gemini-getsu](gemini-getsu/) | Writing Google Flow prompts to swap a performer in one source clip while preserving its scene and timing. | Asset map, one prompt per character, verbatim dialogue, natural camera direction, pre- and post-generation checks |
 | [painterly-action-choreography-engine](painterly-action-choreography-engine/) | Writing fast, legible, continuity-safe AI-video action prompts: fights, chases, escapes, impacts, stunts, image-to-video action shots. | Character locks, location geometry, action logic, camera/edit grammar, continuous video prompt, music/SFX layer, negative constraints, continuity risks |
