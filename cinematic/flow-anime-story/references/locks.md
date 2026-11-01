@@ -69,4 +69,4 @@ S07 shipped with "No music, no speech."
 2D hand-drawn anime style, soft cel shading, clean thin line art, warm watercolor-painted backgrounds, golden afternoon light, gentle pastel palette, expressive large eyes, children's TV animation quality, calm camera, no text, no logos, no subtitles
 ```
 
-Flat result. Khaled rejected the first girl sheet ("مش عاجبني").
+Flat result. The creator rejected the first girl sheet ("مش عاجبني").
