@@ -1,5 +1,3 @@
-> **Status:** Shots S02, S05, S06, S07 and the end card are complete. The full prompt text for **S01, S03 and S04** is not in this pack yet; the lines shown for those shots are the logged ones. Full text will be added when the source prompts are recovered.
-
 # Ruqayya and the Kitten — Google Flow prompt pack
 
 A 60-second kids anime about a little girl who gives her water to a thirsty kitten. Copy a lock, then a shot. Make the pictures first. Animate them after the stills look right.
@@ -71,18 +69,30 @@ Use Reference-to-Video. @Character design sheet of girl is Ruqayya. @Kitten char
 
 ## S03 — So thirsty
 
-The saved production log has the line and the three references (girl sheet, kitten sheet, S03 keyframe). The full prompt text was not kept. Use the same shape as S02. Keep the kitten sad and weak, with a soft gentle face. Line:
+**Keyframe (image, 16:9):** two keyframes were made in one message with S04. Image A:
 
 ```
-مسكينة... مفيش ميه خالص
+Generate 2 images (one per scene), using the FIRST Ruqayya character sheet and the FIRST kitten sheet as exact character references, same Egyptian village and same premium hand-painted Japanese animated feature-film aesthetic, widescreen 16:9, hot summer noon, no text. IMAGE A — SCENE 03 keyframe: close-up at ground level in the shade of the mud-brick wall: the tiny thin orange tabby kitten lies panting with its dry mouth open, eyes half closed; Ruqayya's hand reaches gently toward it from the side, her worried face soft in the background.
+```
+
+**Video (Reference-to-Video, Omni):**
+
+```
+Use Reference-to-Video. @Character design sheet of girl is Ruqayya. @Kitten character design sheet is the kitten. @Ruqayya reaching for panting kitten is the scene and composition. SCENE 03 — SO THIRSTY. An exactly 8-second continuous animated shot. Widescreen 16:9. Premium hand-painted Japanese animated feature-film aesthetic. Low close-up in the shade of the mud-brick wall: the tiny thin orange tabby kitten lies weak and gentle, panting softly with its dry little mouth open, too tired to stand (sad and weak, not angry). Ruqayya's hand slowly and gently strokes its head. The kitten looks up at her with big tired eyes. The camera slowly tilts up to Ruqayya's worried face; she whispers in sweet, natural Egyptian Arabic: "مسكينة... مفيش ميه خالص". Audio: cicadas, soft panting, her gentle whisper. No music. No text or subtitles.
 ```
 
 ## S04 — The choice
 
-Same gap: references and line were saved, the full prompt text was not. She holds her bottle, thirsty too, and hesitates. Line:
+**Keyframe (image, 16:9):** Image B, made in the same message as S03's keyframe:
 
 ```
-وأنا كمان عطشانة...
+IMAGE B — SCENE 04 keyframe: medium close-up of Ruqayya kneeling by the wall, holding her blue water bottle in both hands, looking down at it; she is hot and thirsty herself, a drop of sweat on her forehead, lips dry, hesitating; the kitten is small and blurred in the foreground.
+```
+
+**Video (Reference-to-Video, Omni):**
+
+```
+Use Reference-to-Video. @Character design sheet of girl is Ruqayya. @Kitten character design sheet is the kitten. @Ruqayya holding water bottle is the scene and composition. SCENE 04 — THE CHOICE. An exactly 8-second continuous animated shot. Widescreen 16:9. Premium hand-painted Japanese animated feature-film aesthetic. Medium close-up: Ruqayya kneels by the mud-brick wall in the noon heat, holding her blue water bottle in both hands. She is hot and thirsty herself: a drop of sweat runs down her forehead, she swallows and looks at the bottle, hesitating. She whispers softly in sweet, natural Egyptian Arabic: "وأنا كمان عطشانة...". Then she slowly looks at the tiny weak kitten, her eyes soften, and a small determined smile appears. Slow push-in on her face. Audio: cicadas, a soft heartbeat-like pause, her whisper. No music. No text or subtitles.
 ```
 
 ## S05 — Sharing
@@ -105,7 +115,17 @@ Use Reference-to-Video. @roqa_sheet_v1 is Ruqayya. @kitten_sheet_v1 is the kitte
 
 ## S01 — Hot noon
 
-Made from the S01 keyframe in first-frame mode (one image). The prompt text was not kept. Picture: she walks home in the heat and wipes her forehead. No speech. Cicadas.
+**Keyframe (image, Nano Banana, 16:9):**
+
+```
+Generate 1 image. Use the FIRST Ruqayya character sheet as exact character reference. SCENE 01 keyframe, widescreen 16:9, premium hand-painted Japanese animated feature-film aesthetic, same Egyptian countryside village as Scene 02 (dusty stone path, low mud-brick wall, palm trees, green fields, distant mountains, fluffy clouds). Very hot summer noon, harsh bright sun, heat shimmer. Wide shot: Ruqayya walks home along the path toward the camera, small and alone in the frame, wiping her forehead with the back of her hand, holding a blue water bottle in the other hand. No text.
+```
+
+**Video (Omni, first-frame mode, one image):**
+
+```
+Generate 1 video from the Scene 01 image (use it as the start frame). SCENE 01 — HOT NOON. An exactly 8-second continuous animated shot. Widescreen 16:9. Premium hand-painted Japanese animated feature-film aesthetic. Ruqayya (exact same face, braids, yellow T-shirt, blue denim overalls, satchel) walks slowly along the dusty village path toward the camera under the harsh noon sun, tired by the heat. She wipes her forehead with the back of her hand and squints up at the sun. Heat shimmer rises from the path, palm leaves sway gently. The camera slowly pushes in toward her. Audio: cicadas buzzing, soft footsteps on dust, gentle hot wind. No music, no speech. No text or subtitles.
+```
 
 ## End card
 
